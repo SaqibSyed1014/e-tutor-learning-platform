@@ -13,9 +13,12 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',
+				lg: '2rem'
+			},
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1320px'
 			}
 		},
 		extend: {
@@ -25,14 +28,6 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -63,8 +58,38 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				primary: {
+					500: '#FF6636',
+				},
+				gray: {
+					50: '#F5F7FA',
+					400: '#A1A5B3',
+					500: '#8C94A3',
+					600: '#6E7485',
+					700: '#4E5566',
+					900: '#1D2026'
+				},
+				secondary: {
+					100: '#EBEBFF',
+					500: '#564FFD'
+				},
+				success: {
+					100: '#E1F7E3',
+					500: '#23BD33'
+				},
+				warning: {
+					100: '#FFF2E5',
+				},
+				error: {
+					100: '#FFF0F0',
+					500: '#E34444'
+				},
 				etutor: {
-					orange: '#FF6B38',
+					primary: {
+						DEFAULT: '#FF6636',
+						light: '#FFEEE8'
+					},
+
 					darkblue: '#111827',
 					lightgray: '#F3F4F6',
 				}

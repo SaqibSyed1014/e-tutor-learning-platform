@@ -19,7 +19,6 @@ const Index = () => {
       <CourseCategories />
       <BestSellingCourses />
       <FeaturedCourses />
-      <RecentCourses />
       <BecomeInstructor />
       <TopInstructors />
       <TrustedCompanies />

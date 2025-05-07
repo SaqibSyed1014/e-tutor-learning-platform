@@ -189,6 +189,11 @@ const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    learningPoints: [
+      'Learn to use Python professionally, learning both Python 2 and Python 3',
+      'Create games with Python, like Tic Tac Toe and Blackjack',
+      'Create web applications with Python'
+    ]
   },
   {
     id: '10',
@@ -207,6 +212,11 @@ const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    learningPoints: [
+      'Learn to use Python professionally, learning both Python 2 and Python 3',
+      'Create games with Python, like Tic Tac Toe and Blackjack',
+      'Create web applications with Python'
+    ]
   },
   {
     id: '11',
@@ -225,6 +235,11 @@ const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    learningPoints: [
+      'Learn to use Python professionally, learning both Python 2 and Python 3',
+      'Create games with Python, like Tic Tac Toe and Blackjack',
+      'Create web applications with Python'
+    ]
   },
   {
     id: '12',
@@ -243,6 +258,11 @@ const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    learningPoints: [
+      'Learn to use Python professionally, learning both Python 2 and Python 3',
+      'Create games with Python, like Tic Tac Toe and Blackjack',
+      'Create web applications with Python'
+    ]
   },
   {
     id: '13',
@@ -261,6 +281,11 @@ const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    learningPoints: [
+      'Learn to use Python professionally, learning both Python 2 and Python 3',
+      'Create games with Python, like Tic Tac Toe and Blackjack',
+      'Create web applications with Python'
+    ]
   },
   {
     id: '14',
@@ -279,6 +304,11 @@ const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    learningPoints: [
+      'Learn to use Python professionally, learning both Python 2 and Python 3',
+      'Create games with Python, like Tic Tac Toe and Blackjack',
+      'Create web applications with Python'
+    ]
   },
   {
     id: '15',
@@ -330,7 +360,7 @@ export const bestSellingCourses = coursesData.slice(0, 10);
 export const featuredCourses = coursesData.slice(10, 14);
 export const recentlyAddedCourses = coursesData.slice(7, 16);
 export const getSingleCourse = (id: string) => coursesData.find(course => course.id === id) || null;
-export const getCoursesByCategory = (category: string) => 
+export const getCoursesByCategory = (category: string) =>
   coursesData.filter(course => course.category.toLowerCase() === category.toLowerCase());
 
 export default coursesData;
