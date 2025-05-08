@@ -59,10 +59,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				primary: {
+					100: '#FFEEE8',
 					500: '#FF6636',
+					700: '#993D20'
 				},
 				gray: {
 					50: '#F5F7FA',
+					300: '#B7BAC7',
 					400: '#A1A5B3',
 					500: '#8C94A3',
 					600: '#6E7485',
@@ -71,18 +74,22 @@ export default {
 				},
 				secondary: {
 					100: '#EBEBFF',
-					500: '#564FFD'
+					500: '#564FFD',
+					700: '#342F98'
 				},
 				success: {
 					100: '#E1F7E3',
-					500: '#23BD33'
+					500: '#23BD33',
+					700: '#15711F'
 				},
 				warning: {
 					100: '#FFF2E5',
+					800: '#65390C'
 				},
 				error: {
 					100: '#FFF0F0',
-					500: '#E34444'
+					500: '#E34444',
+					700: '#882929'
 				},
 				etutor: {
 					primary: {
@@ -93,6 +100,9 @@ export default {
 					darkblue: '#111827',
 					lightgray: '#F3F4F6',
 				}
+			},
+			boxShadow: {
+				custom: '0px 0px 32px 0px #091A4412',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

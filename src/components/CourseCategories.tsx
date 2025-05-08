@@ -1,6 +1,21 @@
 
-import { BookOpen, Briefcase, Calculator, Camera, Code, FilmIcon, Headphones, Heart, Layout, Layers, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Processor,
+  Handshake,
+  CreditCard,
+  ChartBarHorizontal,
+  BugDroid,
+  Receipt,
+  MegaPhoneSpeaker,
+  Camera,
+  PenNib,
+  FirstAidKit,
+  Headphones,
+  Package
+} from "@/assets/icons/icons.tsx";
+import { ArrowRight } from "@/assets/icons/common-icons.tsx";
+import { topCourses } from "@/@fake-db/courses";
 
 
 type CategoryCardProps = {
@@ -11,8 +26,17 @@ type CategoryCardProps = {
 };
 
 const CategoryCard = ({ icon, title, courses, bgColor }: CategoryCardProps) => {
+  const colorVariants = {
+    primary: "bg-primary-100",
+    secondary: "bg-secondary-100",
+    warning: "bg-warning-100",
+    success: "bg-success-100",
+    error: "bg-error-100",
+    white: "bg-white",
+    gray: "bg-gray-50",
+  };
   return (
-    <div className={`p-5 rounded-lg transition-transform hover:scale-105 cursor-pointer`} style={{ background: bgColor }}>
+    <div className={`p-5 rounded-lg cursor-pointer transition hover:shadow-[0_12px_32px_0px_rgba(29,32,38,0.1)] ${colorVariants[bgColor]}`}>
       <div className="flex items-center space-x-5">
         <div className="flex justify-center items-center size-16" style={{ background: (title == 'Personal Development' ? '#FF6636' : '#fff') }}>
           <div className="mt-1">{icon}</div>
@@ -29,73 +53,73 @@ const CategoryCard = ({ icon, title, courses, bgColor }: CategoryCardProps) => {
 const CourseCategories = () => {
   const categories = [
     {
-      icon: <BookOpen size={18} className="text-indigo-600" />,
+      icon: <Processor />,
       title: "Legal",
       courses: "55,456 Courses",
       bgColor: "#EBEBFF",
     },
     {
-      icon: <Briefcase size={18} className="text-green-600" />,
+      icon: <Handshake />,
       title: "Business",
       courses: "15,653 Courses",
       bgColor: "#E1F7E3",
     },
     {
-      icon: <Calculator size={18} className="text-amber-600" />,
+      icon: <CreditCard />,
       title: "Finance & Accounting",
       courses: "24,456 Courses",
       bgColor: "#FFF2E5",
     },
     {
-      icon: <Code size={18} className="text-red-600" />,
+      icon: <ChartBarHorizontal />,
       title: "IT & Software",
       courses: "35,675 Courses",
       bgColor: "#FFF0F0",
     },
     {
-      icon: <Lightbulb size={18} className="text-white" />,
+      icon: <BugDroid />,
       title: "Personal Development",
       courses: "28,764 Courses",
       bgColor: "#ffffff",
     },
     {
-      icon: <Layout size={18} className="text-gray-600" />,
+      icon: <Receipt />,
       title: "Office Productivity",
       courses: "12,556 Courses",
       bgColor: "#F5F7FA",
     },
     {
-      icon: <Layers size={18} className="text-blue-600" />,
+      icon: <MegaPhoneSpeaker />,
       title: "Marketing",
       courses: "32,546 Courses",
       bgColor: "#EBEBFF",
     },
     {
-      icon: <Camera size={18} className="text-gray-600" />,
+      icon: <Camera />,
       title: "Photography & Video",
       courses: "9,546 Courses",
       bgColor: "#F5F7FA",
     },
     {
-      icon: <Heart size={18} className="text-yellow-600" />,
+      icon: <Package />,
       title: "Lifestyle",
       courses: "16,742 Courses",
       bgColor: "#FFF2E5",
     },
     {
-      icon: <Briefcase size={18} className="text-rose-600" />,
+      icon: <PenNib />,
       title: "Design",
       courses: "13,265 Courses",
       bgColor: "#FFEEE8",
     },
     {
-      icon: <Heart size={18} className="text-emerald-600" />,
+      icon: <FirstAidKit />,
       title: "Health & Fitness",
       courses: "15,784 Courses",
       bgColor: "#E1F7E3",
     },
     {
-      icon: <Headphones size={18} className="text-yellow-600" />,
+      icon: <Headphones />,
       title: "Music",
       courses: "8,532 Courses",
       bgColor: "#FFF2E5",
@@ -107,19 +131,21 @@ const CourseCategories = () => {
       <div className="section-layout">
         <h2 className="section-heading">Browse top category</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
+          {topCourses.map((category, index) => (
               <CategoryCard
                   key={index}
                   icon={category.icon}
                   title={category.title}
                   courses={category.courses}
-                  bgColor={category.bgColor}
+                  bgColor={category.color}
               />
           ))}
         </div>
         <div className="flex gap-3 items-center text-sm mx-auto">
           <p>We have more category & subcategory.</p>
-          <Link to="" className="plain-link">Browse All</Link>
+          <Link to="" className="plain-link">
+            Browse All <ArrowRight />
+          </Link>
         </div>
       </div>
     </div>

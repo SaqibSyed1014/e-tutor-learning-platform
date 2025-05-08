@@ -102,6 +102,10 @@
   p{
     @apply text-gray-700 text-sm;
   }
+
+  h1, h2, h3, h4, h5, h6{
+    @apply text-gray-900;
+  }
 }
 
 @layer utilities{
@@ -111,22 +115,28 @@
   .top-bar a{
     @apply relative hover:text-white p-4;
   }
+  .top-bar a.active{
+    @apply text-white;
+  }
+  .top-bar a.active::before{
+    @apply scale-x-100;
+  }
 
   .top-bar a::before {
     @apply absolute top-0 -left-1/2 translate-x-1/2 w-full h-px bg-etutor-primary content-[''] scale-x-0 transform origin-center transition-transform duration-300; /* Initial state: hidden, positioned at the top */
   }
 
   .top-bar a:hover::before {
-    @apply scale-x-100; /* On hover, scale the line to full width */
+    @apply scale-x-100;
   }
 
   .section-heading{
-    @apply text-[40px] leading-[48px] font-semibold text-center
+    @apply text-[40px] leading-[48px] font-semibold text-center;
   }
   .section-layout{
-    @apply flex flex-col gap-10
+    @apply flex flex-col gap-10;
   }
   .plain-link{
-    @apply text-etutor-primary text-sm font-medium
+    @apply flex gap-2 items-center text-etutor-primary text-sm font-medium;
   }
 }

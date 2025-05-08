@@ -5,7 +5,8 @@ import { recentlyAddedCourses, getSingleCourse } from "@/@fake-db/courses";
 import { Star, Users, Clock, Heart, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {CourseCard} from "@/components/tiny/tiny-collection.tsx";
+import {CategoryBadge, CourseCard} from "@/components/tiny/tiny-collection.tsx";
+import {ArrowRight} from "@/assets/icons/common-icons.tsx";
 
 const RecentCourseCard = ({ course }: { course: typeof recentlyAddedCourses[0] }) => {
   return (
@@ -16,9 +17,7 @@ const RecentCourseCard = ({ course }: { course: typeof recentlyAddedCourses[0] }
           alt={course.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-2 left-2 bg-gray-100 text-xs px-2 py-1 text-gray-600 uppercase font-medium rounded">
-          {course.category}
-        </div>
+        <CategoryBadge category={course.category} />
         <div className="absolute bottom-2 right-2 bg-etutor-primary text-white text-xs px-2 py-1 font-medium rounded">
           ${course.price}
         </div>
@@ -124,7 +123,6 @@ const RecentCourseCard = ({ course }: { course: typeof recentlyAddedCourses[0] }
 // };
 
 const RecentCourses = () => {
-
   return (
     <section className="py-20">
       <div className="container">
@@ -141,8 +139,8 @@ const RecentCourses = () => {
               ))}
           </div>
 
-          <Button to="/courses" className="mx-auto">
-            Browse All Course →
+          <Button to="/courses" variant="outline" className="mx-auto">
+            Browse All Course <ArrowRight classes="scale-150 ml-1" />
           </Button>
         </div>
 

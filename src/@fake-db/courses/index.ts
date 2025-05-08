@@ -1,8 +1,11 @@
+import {any} from "zod";
+import {ReactElement} from "react"
+import { courseCategories } from "@/@fake-db/courses/collections.tsx";
 
 export interface Course {
   id: string;
   title: string;
-  category: string;
+  category: CourseCategory;
   price: number;
   originalPrice: number;
   discount?: number;
@@ -20,17 +23,26 @@ export interface Course {
   description?: string;
   learningPoints?: string[];
 }
+export interface CourseCategory {
+  id: number;
+  title: string,
+  courses: string
+  color: string;
+  isBestSelling: boolean
+  icon: ReactElement
+}
+
 
 const coursesData: Course[] = [
   {
     id: '1',
     title: 'Machine Learning A-Z™: Hands-On Python & R in Data Science',
-    category: 'CODING',
+    category: courseCategories.DESIGN,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -43,12 +55,12 @@ const coursesData: Course[] = [
   {
     id: '2',
     title: 'The Complete 2021 Web Development Bootcamp',
-    category: 'DEVELOPMENT',
+    category: courseCategories.FINANCE,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -61,12 +73,12 @@ const coursesData: Course[] = [
   {
     id: '3',
     title: 'Learn Python Programming Masterclass',
-    category: 'LIBRARY',
+    category: courseCategories.BUSINESS,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -79,12 +91,12 @@ const coursesData: Course[] = [
   {
     id: '4',
     title: 'The Complete Digital Marketing Course - 12 Courses in 1',
-    category: 'MARKETING',
+    category: courseCategories.MARKETING,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -97,12 +109,12 @@ const coursesData: Course[] = [
   {
     id: '5',
     title: 'React Level I: LifeUI Master/Teacher Program',
-    category: 'DEVELOPMENT',
+    category: courseCategories.DEVELOPMENTS,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -115,12 +127,12 @@ const coursesData: Course[] = [
   {
     id: '6',
     title: 'The Complete Foundation Stock Trading Course',
-    category: 'FINANCE',
+    category: courseCategories.LEGAL,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -133,12 +145,12 @@ const coursesData: Course[] = [
   {
     id: '7',
     title: 'Become an Pro in Excel, Financial Modeling and Valuation',
-    category: 'MARKETING',
+    category: courseCategories.LIFESTYLE,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -151,12 +163,12 @@ const coursesData: Course[] = [
   {
     id: '8',
     title: 'The Python Mega Course: Build 10 Real World Applications',
-    category: 'HEALTH & FITNESS',
+    category: courseCategories.HEALTH,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -175,12 +187,12 @@ const coursesData: Course[] = [
   {
     id: '9',
     title: 'Copywriting - Become a Freelance Copywriter, your own boss',
-    category: 'DESIGN',
+    category: courseCategories.IT,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -198,12 +210,12 @@ const coursesData: Course[] = [
   {
     id: '10',
     title: 'Google Analytics Certification - Learn How To Pass The Exam',
-    category: 'LEADERSHIP',
+    category: courseCategories.OFFICE,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 285700,
+    students: 28,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -221,12 +233,12 @@ const coursesData: Course[] = [
   {
     id: '11',
     title: 'Google Analytics Certification - Learn How To Pass The Exam',
-    category: 'PERSONAL DEVELOPMENT',
+    category: courseCategories.MUSIC,
     price: 14.00,
     originalPrice: 89.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 265700,
+    students: 26,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -244,12 +256,12 @@ const coursesData: Course[] = [
   {
     id: '12',
     title: 'Investing In Stocks The Complete Course! (13 Hour)',
-    category: 'HEALTH & FITNESS',
+    category: courseCategories.MARKETING,
     price: 14.00,
     originalPrice: 89.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 265700,
+    students: 26,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -267,12 +279,12 @@ const coursesData: Course[] = [
   {
     id: '13',
     title: 'Adobe XD for Web Design: Essential Principles',
-    category: 'PRODUCTIVITY',
+    category: courseCategories.BUSINESS,
     price: 14.00,
     originalPrice: 89.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 265700,
+    students: 26,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -290,12 +302,12 @@ const coursesData: Course[] = [
   {
     id: '14',
     title: 'The Python Mega Course: Build 10 Real World Applications',
-    category: 'MUSIC',
+    category: courseCategories.DESIGN,
     price: 14.00,
     originalPrice: 89.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 265700,
+    students: 26,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -313,12 +325,12 @@ const coursesData: Course[] = [
   {
     id: '15',
     title: 'Facebook Ads & Facebook Marketing MASTERY 2021 Course',
-    category: 'DEVELOPMENT',
+    category: courseCategories.BUSINESS,
     price: 57,
     originalPrice: 199.99,
     rating: 5.0,
     reviewCount: 357914,
-    students: 265700,
+    students: 26,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -331,13 +343,13 @@ const coursesData: Course[] = [
   {
     id: '16',
     title: '2021 Complete Python Bootcamp From Zero to Hero in Python',
-    category: 'DEVELOPMENT',
+    category: courseCategories.DEVELOPMENTS,
     price: 57,
     originalPrice: 199.99,
     discount: 50,
     rating: 5.0,
     reviewCount: 357914,
-    students: 265700,
+    students: 26,
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
@@ -355,12 +367,13 @@ const coursesData: Course[] = [
   }
 ];
 
+export const topCourses = [courseCategories.LEGAL, courseCategories.BUSINESS, courseCategories.FINANCE, courseCategories.IT, courseCategories.PERSONALDEVELOPMENT, courseCategories.OFFICE, courseCategories.MARKETING, courseCategories.PHOTOGRAPHY, courseCategories.LIFESTYLE, courseCategories.DESIGN, courseCategories.HEALTH, courseCategories.MUSIC]
 // Export different selections of courses
-export const bestSellingCourses = coursesData.slice(0, 10);
+export const bestSellingCourses = coursesData.filter((course) => course.category.isBestSelling);
 export const featuredCourses = coursesData.slice(10, 14);
 export const recentlyAddedCourses = coursesData.slice(7, 16);
 export const getSingleCourse = (id: string) => coursesData.find(course => course.id === id) || null;
 export const getCoursesByCategory = (category: string) =>
-  coursesData.filter(course => course.category.toLowerCase() === category.toLowerCase());
+  coursesData.filter(course => course.category.title.toLowerCase() === category.toLowerCase());
 
 export default coursesData;

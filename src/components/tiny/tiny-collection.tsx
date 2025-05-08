@@ -1,5 +1,5 @@
 import {Check, Clock, Heart, Star, Users} from "lucide-react";
-import {bestSellingCourses} from "@/@fake-db/courses";
+import {bestSellingCourses, CourseCategory} from "@/@fake-db/courses";
 import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
@@ -17,6 +17,24 @@ export const StudentCount = ({ showIcon }: { showIcon: boolean }) => {
     );
 };
 
+export const CategoryBadge: React.FC<{ category: CourseCategory }> = ({ category }) => {
+    const colorVariants = {
+        primary: "bg-primary-100 text-primary-700",
+        secondary: "bg-secondary-100 text-secondary-700",
+        warning: "bg-warning-100 text-primary-700",
+        success: "bg-success-100 text-success-700",
+        error: "bg-error-100 text-error-700",
+        white: "bg-white",
+        gray: "bg-gray-100 text-gray-700",
+    };
+  return (
+      <div
+          className={`inline-block text-[10px] px-2 py-1 uppercase font-medium rounded mb-2 ${colorVariants[category.color]}`}>
+          {category.title}
+      </div>
+  )
+}
+
 export const Rating = ({ showCount }: { showCount: boolean }) => {
     return (
         <div className="flex items-center gap-1">
@@ -30,7 +48,7 @@ export const Rating = ({ showCount }: { showCount: boolean }) => {
 
 export const CourseCard = ({ course }: { course: typeof bestSellingCourses[0] }) => {
     return (
-        <div className="relative group">
+        <div className="relative group text-primary-100">
             <Card className="overflow-hidden h-full group-hover:shadow-[0_2px_6px_0px_#1D20260F]">
                 <div className="aspect-[4/3] w-full overflow-hidden">
                     <img
@@ -41,10 +59,7 @@ export const CourseCard = ({ course }: { course: typeof bestSellingCourses[0] })
                 </div>
                 <CardContent className="p-4">
                     <div className="flex justify-between">
-                        <div
-                            className="bg-gray-100 inline-block text-[10px] px-2 py-1 text-gray-600 uppercase font-medium rounded mb-2">
-                            {course.category}
-                        </div>
+                        <CategoryBadge category={course.category} />
                         <span className="font-bold text-etutor-primary">${course.price}</span>
                     </div>
                     <h3 className="text-sm font-medium line-clamp-2">
@@ -61,10 +76,10 @@ export const CourseCard = ({ course }: { course: typeof bestSellingCourses[0] })
                 style={{ boxShadow: '0px 4px 20px 0px #1D20261F' }}
             >
                 <div className="px-6">
-                    <div className="bg-blue-100 text-blue-600 inline-block text-xs px-2 py-1 uppercase font-medium rounded mb-2">
-                        {course.category}
-                    </div>
+                    <CategoryBadge category={course.category} />
+
                     <h3 className="text-xl font-bold mb-4">{course.title}</h3>
+
                     <div className="flex flex-col gap-5">
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-3">

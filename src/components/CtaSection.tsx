@@ -4,30 +4,32 @@ import statsData from "@/@fake-db/stats";
 
 const CtaSection = () => {
   return (
-    <div className="w-full bg-etutor-darkblue text-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Start learning with 67.1k students around the world.
-          </h2>
+    <div className="bg-gray-900 text-white py-[100px] shadow-[0_-1px_0_0_#363B4780_inset]">
+      <div className="container">
+        <div className="flex items-center">
+          <div className="flex flex-col gap-8 max-w-[536px] w-full">
+            <h2 className="section-heading !text-left text-white">
+              Start learning with 67.1k students around the world.
+            </h2>
 
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Button className="bg-etutor-primary hover:bg-etutor-primary/90 text-white">
-              Join The Family
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-etutor-darkblue">
-              Browse All Courses
-            </Button>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto">
-          {statsData.map((stat) => (
-            <div key={stat.id} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-1">{stat.value}</div>
-              <div className="text-gray-300">{stat.title}</div>
+            <div className="flex flex-col md:flex-row gap-4">
+              <Button>
+                Join The Family
+              </Button>
+              <Button variant="dark">
+                Browse All Courses
+              </Button>
             </div>
-          ))}
+          </div>
+
+          <div className="flex justify-end gap-6 flex-1">
+            {statsData.map((stat) => (
+                <div key={stat.id} className="max-w-[200px] w-full shrink-0">
+                  <div className="section-heading !text-left text-white mb-3">{stat.value}</div>
+                  <div className="text-gray-300">{stat.title}</div>
+                </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

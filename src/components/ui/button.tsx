@@ -12,6 +12,7 @@ const buttonVariants = cva(
         default: "bg-etutor-primary text-white hover:bg-etutor-primary/90",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          dark: "bg-white/5 text-white hover:bg-white/10",
         outline:
           "bg-etutor-primary-light text-etutor-primary hover:bg-etutor-primary hover:text-etutor-primary-light",
         outlineInvert:

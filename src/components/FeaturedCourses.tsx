@@ -3,7 +3,7 @@ import {Card, CardContent, CardFooter} from "@/components/ui/card";
 import { featuredCourses } from "@/@fake-db/courses";
 import { Star, Users, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import {Rating, StudentCount} from "@/components/tiny/tiny-collection.tsx";
+import {CategoryBadge, Rating, StudentCount} from "@/components/tiny/tiny-collection.tsx";
 import RecentCourses from "@/components/RecentCourses.tsx";
 
 const FeaturedCourseCard = ({ course }: { course: typeof featuredCourses[0] }) => {
@@ -21,10 +21,7 @@ const FeaturedCourseCard = ({ course }: { course: typeof featuredCourses[0] }) =
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
-              <div
-                  className="bg-gray-100 inline-block text-xs px-2 py-1 text-gray-600 uppercase font-medium rounded">
-                {course.category}
-              </div>
+              <CategoryBadge category={course.category} />
               <div className="flex items-center gap-1">
                 <span className="text-lg text-gray-900">$14.00</span>
                 <span className="text-gray-400" style={{textDecoration: 'line-through'}}>$26.00</span>
@@ -66,7 +63,7 @@ const FeaturedCourseCard = ({ course }: { course: typeof featuredCourses[0] }) =
 
 const FeaturedCourses = () => {
   return (
-    <section className="py-20 relative -top-[350px]">
+    <section className="py-20 relative -top-[350px] mb-[-350px]">
       <div className="bg-white border border-gray-100 p-20 mx-auto w-fit">
         <div className="container m-0">
           <div className="section-layout">

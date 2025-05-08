@@ -4,6 +4,7 @@ import { topInstructors } from "@/@fake-db/instructors";
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import {Rating, StudentCount} from "@/components/tiny/tiny-collection.tsx";
+import {ArrowRight} from "@/assets/icons/common-icons.tsx";
 
 const InstructorCard = ({ instructor }: { instructor: typeof topInstructors[0] }) => {
   return (
@@ -29,7 +30,7 @@ const InstructorCard = ({ instructor }: { instructor: typeof topInstructors[0] }
 
 const TopInstructors = () => {
   return (
-    <div className="py-20 relative -top-[320px]">
+    <div className="py-20 relative -top-[320px] mb-[-320px]">
         <div className="bg-white border border-gray-100 p-20 mx-auto w-fit">
           <div className="container m-0">
               <div className="section-layout">
@@ -39,12 +40,11 @@ const TopInstructors = () => {
                           <InstructorCard key={instructor.id} instructor={instructor}/>
                       ))}
                   </div>
-                  <div className="text-center mt-10">
-                      <p className="text-gray-600 mb-4">Thousands of students waiting for a instructor. Start teaching &
+                  <div className="flex gap-2 items-center mx-auto">
+                      <p>Thousands of students waiting for a instructor. Start teaching &
                           earning now.</p>
-                      <Link to="/become-instructor"
-                            className="text-etutor-primary hover:text-etutor-primary/80 flex items-center gap-1 justify-center">
-                          Become Instructor →
+                      <Link to="/become-instructor" className="plain-link">
+                          Become Instructor <ArrowRight />
                       </Link>
                   </div>
               </div>

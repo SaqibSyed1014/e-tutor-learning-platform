@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import {ArrowRight} from "@/assets/icons/common-icons.tsx";
+
 
 const BecomeInstructor = () => {
   return (
@@ -17,7 +18,7 @@ const BecomeInstructor = () => {
             <Button
               variant="outlineInvert"
             >
-              Start Teaching <ArrowRight className="ml-2 h-4 w-4" />
+              Start Teaching <ArrowRight classes="scale-150 ml-1" />
             </Button>
           </div>
 
