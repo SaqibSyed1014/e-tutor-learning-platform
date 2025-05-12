@@ -5,12 +5,12 @@ import {ArrowRight} from "@/assets/icons/common-icons.tsx";
 
 const BecomeInstructor = () => {
   return (
-    <div className="w-full bg-gray-50 pt-20 pb-80">
+    <section className="bg-gray-50 pt-20 pb-80">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 md:p-10" style={{ background: 'linear-gradient(90deg, #CC522B 0%, #FF6636 100%)' }}>
-            <h2 className="text-3xl font-bold mb-3 text-white">Become an instructor</h2>
-            <p className="mb-6 text-white w-full max-w-[321px]">
+          <div className="relative overflow-hidden p-8 md:p-10" style={{ background: 'linear-gradient(90deg, #CC522B 0%, #FF6636 100%)' }}>
+            <h3 className="mb-3 text-white">Become an instructor</h3>
+            <p className="mb-6 text-white w-full max-w-[311px]">
               Instructors from around the world teach millions
               of students on Udemy. We provide the tools
               and skills to teach what you love.
@@ -20,10 +20,12 @@ const BecomeInstructor = () => {
             >
               Start Teaching <ArrowRight classes="scale-150 ml-1" />
             </Button>
+
+            <img src="/images/boy-pointing.png" alt="Boy Pointing" className="absolute w-[320px] top-3 bottom-0 right-3"/>
           </div>
 
           <div className="bg-white p-10 md:p-10">
-            <h2 className="text-3xl font-bold mb-6">Your teaching & earning steps</h2>
+            <h3 className="mb-6">Your teaching & earning steps</h3>
 
             <div className="grid grid-cols-2 gap-5 text-base">
               <div className="flex items-center gap-4">
@@ -31,16 +33,16 @@ const BecomeInstructor = () => {
                   1
                 </div>
                 <div>
-                  <h3 className="">Apply to become instructor</h3>
+                  <p className="text-gray-900 !text-base">Apply to become instructor</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="bg-secondary-100 text-secondary-500 font-semibold text-2xl size-[52px] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="bg-error-100 text-primary-500 font-semibold text-2xl size-[52px] rounded-full flex items-center justify-center flex-shrink-0">
                   2
                 </div>
                 <div>
-                  <h3 className="">Build & edit your profile</h3>
+                  <p className="text-gray-900 !text-base">Build & edit your profile</p>
                 </div>
               </div>
 
@@ -49,7 +51,7 @@ const BecomeInstructor = () => {
                   3
                 </div>
                 <div>
-                  <h3 className="">Create your new course</h3>
+                  <p className="text-gray-900 !text-base">Create your new course</p>
                 </div>
               </div>
 
@@ -58,14 +60,14 @@ const BecomeInstructor = () => {
                   4
                 </div>
                 <div>
-                  <h3 className="">Start teaching & earning</h3>
+                  <p className="text-gray-900 !text-base">Start teaching & earning</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

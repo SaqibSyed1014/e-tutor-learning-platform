@@ -124,7 +124,7 @@ const RecentCourseCard = ({ course }: { course: typeof recentlyAddedCourses[0] }
 
 const RecentCourses = () => {
   return (
-    <section className="py-20">
+    <section className="py-20 overflow-hidden">
       <div className="container">
         <div className="section-layout">
             <h2 className="section-heading">Recently added courses</h2>

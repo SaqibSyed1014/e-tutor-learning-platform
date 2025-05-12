@@ -104,7 +104,13 @@
   }
 
   h1, h2, h3, h4, h5, h6{
-    @apply text-gray-900;
+    @apply text-gray-900 font-semibold tracking-[-.01em];
+  }
+  h1{
+    @apply tracking-[-.02em];
+  }
+  h3{
+    @apply text-[32px] leading-[40px]
   }
 }
 

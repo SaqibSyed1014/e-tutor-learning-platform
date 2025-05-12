@@ -76,16 +76,18 @@ const Navbar = () => {
                 options={currency}
                 selected={selectedCurrency}
                 onChange={selectCurrency}
+                size="sm"
                 alignment="end"
-                triggerClasses="text-sm text-gray-400 flex items-center gap-1.5"
+                triggerClasses="text-gray-400 flex items-center gap-1.5"
                 contentContentClasses="bg-etutor-darkblue"
             />
             <DropdownMenuWrapper
                 options={languages}
                 selected={selectedLang}
                 onChange={selectLang}
+                size="sm"
                 alignment="end"
-                triggerClasses="text-sm text-gray-400 flex items-center gap-1.5"
+                triggerClasses="text-gray-400 flex items-center gap-1.5"
                 contentContentClasses="bg-etutor-darkblue"
             />
           </div>
@@ -95,7 +97,7 @@ const Navbar = () => {
       {/* Main navbar */}
       <div className="bg-white py-6 px-8" style={{ boxShadow: '0px -1px 0px 0px #E9EAF0 inset'}}>
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-12">
             <Link to="/" className="flex items-center space-x-2">
               <BrandLogo />
             </Link>

@@ -5,7 +5,7 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
 } from "@/components/ui/dropdown-menu.tsx";
-import {CaretDown} from "@/assets/icons/common-icons.tsx";
+import {CaretDown, CaretDownSmall} from "@/assets/icons/common-icons.tsx";
 
 
 type Option = {
@@ -20,7 +20,8 @@ interface DropdownMenuWrapperProps {
     onChange: (value: string) => void;
     triggerClasses?: string;
     contentContentClasses?: string;
-    alignment?: "start" | "center" | "end"
+    alignment?: "start" | "center" | "end";
+    size?: "lg" | "md" | "sm";
     children?: React.ReactNode; // custom trigger content if needed
     activeOptionClass?: string
 }
@@ -32,6 +33,7 @@ export default function DropdownMenuWrapper(
         onChange,
         children,
         alignment,
+        size,
         triggerClasses,
         defaultPlaceholder,
         activeOptionClass,
@@ -42,11 +44,11 @@ export default function DropdownMenuWrapper(
         return (
             <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
                 <DropdownMenuTrigger asChild>
-                    <div className={`cursor-pointer flex items-center ${triggerClasses}`}>
+                    <div className={`cursor-pointer flex items-center ${triggerClasses} ${size === 'sm' && 'text-sm'}`}>
                         {children || (
                             <>
                                 <span>{options.find((item) => item.value === selected)?.label ?? defaultPlaceholder }</span>
-                                <CaretDown />
+                                {size === 'sm' ? <CaretDownSmall /> : <CaretDown/>}
                             </>
                         )}
                     </div>

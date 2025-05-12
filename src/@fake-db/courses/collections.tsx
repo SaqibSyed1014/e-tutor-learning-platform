@@ -122,42 +122,66 @@ export const trustedCompanies: Company[] = [
     {
         id: '1',
         name: 'Netflix',
-        logo: <NetflixLogo />
+        logo: <NetflixLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Ted Sarandos',
+        designation: 'Chief Executive Officer'
     },
     {
         id: '2',
         name: 'YouTube',
-        logo: <YoutubeLogo />
+        logo: <YoutubeLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Sundar Pichai',
+        designation: 'Chief Chairman'
     },
     {
         id: '3',
         name: 'Google',
-        logo: <GoogleLogo />
+        logo: <GoogleLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Sundar Pichai',
+        designation: 'Chief Chairman'
     },
     {
         id: '4',
         name: 'Lenovo',
-        logo: <LenovoLogo />
+        logo: <LenovoLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Sundar Pichai',
+        designation: 'Chief Chairman'
     },
     {
         id: '5',
         name: 'Slack',
-        logo: <SlackLogo />
+        logo: <SlackLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Sundar Pichai',
+        designation: 'Chief Chairman'
     },
     {
         id: '6',
         name: 'Verizon',
-        logo: <VerizonLogo />
+        logo: <VerizonLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Sundar Pichai',
+        designation: 'Chief Chairman'
     },
     {
         id: '7',
         name: 'Lexmark',
-        logo: <LexMarkLogo />
+        logo: <LexMarkLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Sundar Pichai',
+        designation: 'Chief Chairman'
     },
     {
         id: '8',
         name: 'Microsoft',
-        logo: <MicrosoftLogo />
+        logo: <MicrosoftLogo />,
+        review: 'Eduguard fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.',
+        reviewer: 'Satya Nadella',
+        designation: 'CEO'
     }
 ];
 

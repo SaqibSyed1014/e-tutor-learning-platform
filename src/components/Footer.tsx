@@ -60,7 +60,7 @@ const Footer = () => {
               <BrandLogo />
             </Link>
             <p className="text-gray-500 mt-5 mb-6">
-              Aliquam rhoncus ligula est, non pulvinar elit convallis nec. Donec mattis dolo at
+              Aliquam rhoncus ligula est, non pulvinar elit <br /> convallis nec. Donec mattis dolo at
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((item, index) => {
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-5">TOP 4 CATEGORY</h3>
+            <p className="text-white font-medium mb-5">TOP 4 CATEGORY</p>
             <ul className="flex gap-2 flex-col items-start">
               <li>
                 <Link to="/category/development" className="flex gap-2 pb-1 text-gray-500 hover:text-white hover:shadow-[0px_-1.5px_0px_0px_#FF6636_inset] group">
@@ -104,7 +104,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-5">QUICK LINKS</h3>
+            <p className="text-white font-medium mb-5">QUICK LINKS</p>
             <ul className="flex gap-2 flex-col items-start">
               <li>
                 <Link to="/about" className="flex gap-2 pb-1 text-gray-500 hover:text-white hover:shadow-[0px_-1.5px_0px_0px_#FF6636_inset] group">
@@ -134,7 +134,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-5">SUPPORT</h3>
+            <p className="text-white font-medium mb-5">SUPPORT</p>
             <ul className="flex gap-2 flex-col items-start">
               <li>
                 <Link to="/help" className="flex gap-2 pb-1 text-gray-500 hover:text-white hover:shadow-[0px_-1.5px_0px_0px_#FF6636_inset] group">
@@ -164,7 +164,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-medium mb-5 uppercase">Downlaod our app</h3>
+            <p className="text-white font-medium mb-5 uppercase">Downlaod our app</p>
             <ul className="flex gap-3 flex-col items-start">
               <li>
                 <img src="/images/app-store.png" />

@@ -17,12 +17,12 @@ const InstructorCard = ({ instructor }: { instructor: typeof topInstructors[0] }
         />
       </div>
       <CardContent className="flex flex-col gap-1 p-4">
-        <h3 className="font-medium text-gray-900">{instructor.name}</h3>
+        <p className="text-base font-medium text-gray-900">{instructor.name}</p>
         <p className="text-sm text-gray-500">{instructor.role}</p>
       </CardContent>
         <CardFooter className="flex items-center justify-between">
-            <Rating showCount={false} />
-            <StudentCount showIcon={false}/>
+            <Rating rating={instructor.rating} showCount={false} />
+            <StudentCount count={instructor.students} showIcon={false}/>
         </CardFooter>
     </Card>
   );
