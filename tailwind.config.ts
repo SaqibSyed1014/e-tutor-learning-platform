@@ -65,6 +65,7 @@ export default {
 				},
 				gray: {
 					50: '#F5F7FA',
+					100: '#E9EAF0',
 					300: '#B7BAC7',
 					400: '#A1A5B3',
 					500: '#8C94A3',

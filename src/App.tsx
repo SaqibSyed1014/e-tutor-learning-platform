@@ -16,6 +16,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ComingSoon from "./pages/ComingSoon";
 import FAQ from "./pages/FAQ";
+import UnauthenticatedLayout from "@/layouts/Unauthenticated";
 
 const queryClient = new QueryClient();
 
@@ -26,17 +27,20 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/category/:id" element={<CategoryDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/career/:id" element={<CareerDetail />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/coming-soon" element={<ComingSoon />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route element={<UnauthenticatedLayout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/category/:id" element={<CategoryDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/career/:id" element={<CareerDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
+            <Route path="/faq" element={<FAQ />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

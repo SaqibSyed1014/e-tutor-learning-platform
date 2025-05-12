@@ -1,11 +1,64 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import {Bell, Heart, Cart, BrandLogo} from "@/assets/icons/common-icons.tsx";
+import {Bell, Heart, Cart, BrandLogo, MagnifyingGlass} from "@/assets/icons/common-icons.tsx";
 import {Link, NavLink} from "react-router-dom";
+import {useState} from "react";
+import DropdownMenuWrapper from "@/components/DropdownMenuWrapper.tsx"
+
 
 const Navbar = () => {
+  const [selectedLang, selectLang] = useState('eng');
+  const [selectedCurrency, selectCurrency] = useState('usd');
+  const [selectedBrowse, selectBrowse] = useState('');
+
+  const languages = [
+    {
+      value: 'eng',
+      label: 'English'
+    },
+    {
+      value: 'germ',
+      label: 'German'
+    },
+    {
+      value: 'fre',
+      label: 'French'
+    }
+  ];
+
+  const currency = [
+    {
+      value: 'usd',
+      label: 'USD'
+    },
+    {
+      value: 'euro',
+      label: 'Euro'
+    },
+    {
+      value: 'pkr',
+      label: 'PKR'
+    }
+  ];
+
+  const browseOptions = [
+    {
+      value: 'cate',
+      label: 'Categories'
+    },
+    {
+      value: 'ins',
+      label: 'Instructors'
+    },
+    {
+      value: 'course',
+      label: 'Course'
+    }
+  ];
+
+
+
   return (
     <div className="w-full">
       {/* Top navbar */}
@@ -19,9 +72,22 @@ const Navbar = () => {
             <NavLink to="/become-instructor" activeClassName="active">Become an Instructor</NavLink>
           </div>
           <div className="flex space-x-6 text-sm">
-            <Link to="/login">Login</Link>
-            <span>|</span>
-            <Link to="/signup">Signup</Link>
+            <DropdownMenuWrapper
+                options={currency}
+                selected={selectedCurrency}
+                onChange={selectCurrency}
+                alignment="end"
+                triggerClasses="text-sm text-gray-400 flex items-center gap-1.5"
+                contentContentClasses="bg-etutor-darkblue"
+            />
+            <DropdownMenuWrapper
+                options={languages}
+                selected={selectedLang}
+                onChange={selectLang}
+                alignment="end"
+                triggerClasses="text-sm text-gray-400 flex items-center gap-1.5"
+                contentContentClasses="bg-etutor-darkblue"
+            />
           </div>
         </div>
       </div>
@@ -34,26 +100,40 @@ const Navbar = () => {
               <BrandLogo />
             </Link>
 
-            <div className="relative hidden lg:block w-64">
-              <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                <Search size={18} />
-              </span>
-              <Input
-                type="text"
-                placeholder="What do you want to learn..."
-                className="pl-10 pr-4 py-2 rounded-md border border-gray-300 w-full focus:ring-etutor-primary focus:border-etutor-primary"
+            <div className="flex gap-4">
+              <DropdownMenuWrapper
+                  options={browseOptions}
+                  selected={selectedBrowse}
+                  onChange={selectBrowse}
+                  defaultPlaceholder="Browse"
+                  triggerClasses="text-sm text-gray-700 flex items-center gap-1.5 border border-gray-100 justify-between min-w-[200px] px-[18px] py-3"
+                  contentContentClasses="min-w-[200px] bg-white border border-gray-100 !text-gray-900"
+                  activeOptionClass="bg-gray-200"
               />
+
+              <div className="relative hidden lg:block ">
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black">
+                  <MagnifyingGlass />
+                </span>
+                  <Input
+                      type="text"
+                      placeholder="What do you want to learn..."
+                      className="pl-12 pr-4 py-2 w-full min-w-[424px]  placeholder:text-gray-500 focus:ring-etutor-primary focus:border-etutor-primary outline-0"
+                  />
+              </div>
             </div>
+
+
           </div>
 
           <div className="flex items-center space-x-6">
-            <button className="text-gray-600 hover:text-etutor-primary">
+            <button className="text-gray-900 hover:text-etutor-primary">
               <Bell />
             </button>
-            <button className="text-gray-600 hover:text-etutor-primary">
+            <button className="text-gray-900 hover:text-etutor-primary">
               <Heart />
             </button>
-            <button className="text-gray-600 hover:text-etutor-primary">
+            <button className="text-gray-900 hover:text-etutor-primary">
               <Cart />
             </button>
             <div className="space-x-3">

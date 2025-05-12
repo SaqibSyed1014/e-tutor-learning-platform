@@ -1,10 +1,10 @@
 
 import { Link } from "react-router-dom";
-import {ArrowRight, BrandLogo} from "@/assets/icons/common-icons.tsx";
+import {ArrowRight, BrandLogo, CaretDown} from "@/assets/icons/common-icons.tsx";
 import {Facebook, Instagram, Linkedin, Twitter, Youtube} from "@/assets/icons/icons.tsx";
-import {Button} from "@/components/ui/button.tsx";
-import {DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuLabel} from "@/components/ui/dropdown-menu.tsx";
+import {DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel} from "@/components/ui/dropdown-menu.tsx";
 import {useState} from "react";
+import DropdownMenuWrapper from "@/components/DropdownMenuWrapper.tsx";
 
 const Footer = () => {
   const socialLinks = [
@@ -34,7 +34,22 @@ const Footer = () => {
       link: ''
     }
   ]
-  const [openDropdown, toggleDropdown] = useState<boolean>(false);
+  const [selectedLang, selectLang] = useState('eng');
+
+  const languages = [
+    {
+      value: 'eng',
+      label: 'English'
+    },
+    {
+      value: 'germ',
+      label: 'German'
+    },
+    {
+      value: 'fre',
+      label: 'French'
+    }
+  ];
 
   return (
     <footer className="bg-gray-900 text-white text-sm">
@@ -171,26 +186,14 @@ const Footer = () => {
             © 2023 - E-tutor. Designed by <span className="text-white">Templatecookie</span>. All rights reserved
           </p>
 
-          {/*<DropdownMenu open={openDropdown}>*/}
-          {/*  <DropdownMenuTrigger asChild className="text-white">*/}
-          {/*    <Button onClick={() => toggleDropdown(!openDropdown)}>Open</Button>*/}
-          {/*  </DropdownMenuTrigger>*/}
-          {/*  <DropdownMenuContent>*/}
-          {/*    <DropdownMenuLabel>My Account</DropdownMenuLabel>*/}
-          {/*    <DropdownMenuSeparator />*/}
-          {/*    <DropdownMenuItem>Profile</DropdownMenuItem>*/}
-          {/*    <DropdownMenuItem>Settings</DropdownMenuItem>*/}
-          {/*    <DropdownMenuSeparator />*/}
-          {/*    <DropdownMenuItem>Logout</DropdownMenuItem>*/}
-          {/*  </DropdownMenuContent>*/}
-          {/*</DropdownMenu>*/}
+          <DropdownMenuWrapper
+              options={languages}
+              selected={selectedLang}
+              onChange={selectLang}
+              triggerClasses="text-base !text-gray-500 px-[18px] py-3 border border-gray-800 justify-between min-w-[200px]"
+              contentContentClasses="min-w-[200px] bg-gray-800"
+          />
 
-          <div className="flex items-center">
-            <span className="text-gray-500 mr-2">English</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
         </div>
       </div>
     </footer>

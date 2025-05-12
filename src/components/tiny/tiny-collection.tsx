@@ -1,8 +1,10 @@
-import {Check, Clock, Heart, Star, Users} from "lucide-react";
+import {Check, Clock, Star, Users} from "lucide-react";
 import {bestSellingCourses, CourseCategory} from "@/@fake-db/courses";
 import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
+import {Heart} from "@/assets/icons/common-icons.tsx"
+import {useEffect, useRef, useState} from "react";
 
 export const StudentCount = ({ showIcon }: { showIcon: boolean }) => {
     return (
@@ -47,6 +49,25 @@ export const Rating = ({ showCount }: { showCount: boolean }) => {
 
 
 export const CourseCard = ({ course }: { course: typeof bestSellingCourses[0] }) => {
+    const popupRef = useRef<HTMLDivElement>(null);
+    const [positionLeft, setPositionLeft] = useState(false);
+
+    useEffect(() => {
+        const checkPosition = () => {
+            if (!popupRef.current) return;
+            const rect = popupRef.current.getBoundingClientRect();
+            const willOverflowRight = rect.left + rect.width > window.innerWidth;
+            setPositionLeft(willOverflowRight);
+        };
+
+        // Run once after mount
+        checkPosition();
+
+        // Optional: Recheck on resize
+        window.addEventListener("resize", checkPosition);
+        return () => window.removeEventListener("resize", checkPosition);
+    }, []);
+
     return (
         <div className="relative group text-primary-100">
             <Card className="overflow-hidden h-full group-hover:shadow-[0_2px_6px_0px_#1D20260F]">
@@ -72,8 +93,13 @@ export const CourseCard = ({ course }: { course: typeof bestSellingCourses[0] })
                 </CardFooter>
             </Card>
 
-            <div className="w-[433px] opacity-0 -translate-y-[40%] hidden group-hover:block group-hover:-translate-y-1/2 group-hover:opacity-100 transition bg-white pt-6 shadow-lg absolute group-hover:z-20 top-1/2 left-full"
-                style={{ boxShadow: '0px 4px 20px 0px #1D20261F' }}
+            {/*Popup*/}
+            <div
+                ref={popupRef}
+                className={`w-[433px] invisible group-hover:visible group-hover:opacity-100 transition bg-white pt-6 shadow-lg absolute z-20 top-1/2 -translate-y-1/2 ${
+                    positionLeft ? "right-full" : "left-full"
+                }`}
+                style={{ boxShadow: "0px 4px 20px 0px #1D20261F" }}
             >
                 <div className="px-6">
                     <CategoryBadge category={course.category} />
@@ -117,9 +143,9 @@ export const CourseCard = ({ course }: { course: typeof bestSellingCourses[0] })
                     <Button
                         variant="outline"
                         size="icon"
-                        className="ml-auto h-8 w-8"
+                        className="ml-auto h-8 w-8 group"
                     >
-                        <Heart className="h-4 w-4 text-etutor-primary" />
+                        <Heart className="h-4 w-4 text-etutor-primary group-hover:text-white transition" />
                     </Button>
                 </div>
 
