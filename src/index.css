@@ -112,6 +112,12 @@
   h3{
     @apply text-[32px] leading-[40px]
   }
+  input, textarea{
+    @apply border border-gray-100 placeholder:text-gray-500 focus:ring-etutor-primary px-[18px] pt-3 pb-2 focus:border-etutor-primary outline-0;
+  }
+  label{
+    @apply text-sm text-gray-900 pb-1.5 block;
+  }
 }
 
 @layer utilities{

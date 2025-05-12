@@ -120,7 +120,7 @@ const Navbar = () => {
                   <Input
                       type="text"
                       placeholder="What do you want to learn..."
-                      className="pl-12 pr-4 py-2 w-full min-w-[424px]  placeholder:text-gray-500 focus:ring-etutor-primary focus:border-etutor-primary outline-0"
+                      className="pl-12 pr-4 py-2 w-full min-w-[424px] placeholder:text-gray-500 focus:ring-etutor-primary focus:border-etutor-primary outline-0"
                   />
               </div>
             </div>

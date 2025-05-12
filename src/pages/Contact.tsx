@@ -140,37 +140,39 @@ const Contact = () => {
                                 friends</p>
 
                             <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label htmlFor="firstName"
-                                               className="block text-sm font-medium text-gray-700 mb-1">First
+                                               className="">First
                                             Name</label>
                                         <input id="firstName" placeholder="First name..."/>
                                     </div>
                                     <div>
                                         <label htmlFor="lastName"
-                                               className="block text-sm font-medium text-gray-700 mb-1">Last
+                                               className="">Last
                                             Name</label>
                                         <input id="lastName" placeholder="Last name..."/>
                                     </div>
-                                </div>
+
 
                                 <div>
                                     <label htmlFor="email"
-                                           className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                           className="">Email</label>
                                     <input id="email" type="email" placeholder="Email Address"/>
                                 </div>
 
                                 <div>
                                     <label htmlFor="subject"
-                                           className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                           className="">Subject</label>
                                     <input id="subject" placeholder="Message Subject"/>
                                 </div>
 
-                                <div>
+                                <div className="col-span-2">
                                     <label htmlFor="message"
-                                           className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                    <textarea id="message" placeholder="Message Subject" className="min-h-[150px]"/>
+                                           className="">Message</label>
+                                    <textarea id="message" rows={4} placeholder="Message Subject" className="w-full"/>
+                                </div>
+
                                 </div>
 
                                 <div>
