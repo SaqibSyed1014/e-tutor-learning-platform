@@ -44,7 +44,7 @@ const About = () => {
         <section className="bg-primary-100 py-20 relative">
             <div className="container">
                 <div className="flex flex-col md:flex-row items-center">
-                    <div className="absolute top-0 bottom-0">
+                    <div className="absolute top-0 bottom-0 left-[10%]">
                         <img
                             src="/images/discussion.png"
                             alt="Team collaborating"

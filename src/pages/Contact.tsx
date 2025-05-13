@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button.tsx";
 import {Breadcrumbs} from "@/components/Breadcrumbs.tsx";
+import {Envelope, PaperPlaneRight} from "@/assets/icons/common-icons.tsx";
 
 const Contact = () => {
   return (
@@ -17,6 +18,7 @@ const Contact = () => {
                     <Button
                         onClick={() => window.location.href = 'mailto:contact@example.com'}
                     >
+                        <Envelope />
                         Copy Email
                     </Button>
                 </div>
@@ -176,8 +178,9 @@ const Contact = () => {
                                 </div>
 
                                 <div>
-                                    <Button >
+                                    <Button>
                                         Send Message
+                                        <PaperPlaneRight />
                                     </Button>
                                 </div>
                             </form>
