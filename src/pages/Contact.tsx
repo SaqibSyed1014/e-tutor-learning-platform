@@ -144,35 +144,28 @@ const Contact = () => {
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="firstName"
-                                               className="">First
-                                            Name</label>
-                                        <input id="firstName" placeholder="First name..."/>
+                                        <label htmlFor="firstName" className="">First Name</label>
+                                        <input required={true} id="firstName" placeholder="First name..."/>
                                     </div>
                                     <div>
-                                        <label htmlFor="lastName"
-                                               className="">Last
-                                            Name</label>
-                                        <input id="lastName" placeholder="Last name..."/>
+                                        <label htmlFor="lastName" className="">Last Name</label>
+                                        <input required={true} id="lastName" placeholder="Last name..."/>
                                     </div>
 
 
                                 <div>
-                                    <label htmlFor="email"
-                                           className="">Email</label>
-                                    <input id="email" type="email" placeholder="Email Address"/>
+                                    <label htmlFor="email" className="">Email</label>
+                                    <input required={true} id="email" type="email" placeholder="Email Address"/>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="subject"
-                                           className="">Subject</label>
-                                    <input id="subject" placeholder="Message Subject"/>
+                                    <label htmlFor="subject" className="">Subject</label>
+                                    <input required={true} id="subject" placeholder="Message Subject"/>
                                 </div>
 
                                 <div className="col-span-2">
-                                    <label htmlFor="message"
-                                           className="">Message</label>
-                                    <textarea id="message" rows={4} placeholder="Message Subject" className="w-full"/>
+                                    <label htmlFor="message" className="">Message</label>
+                                    <textarea required={true} id="message" rows={4} placeholder="Message Subject" className="w-full"/>
                                 </div>
 
                                 </div>

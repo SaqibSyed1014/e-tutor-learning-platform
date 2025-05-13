@@ -32,7 +32,7 @@ const CategoryCard = ({ icon, title, courses, bgColor }: CategoryCardProps) => {
     warning: "bg-warning-100",
     success: "bg-success-100",
     error: "bg-error-100",
-    white: "bg-white",
+    white: "bg-white shadow-[0_12px_32px_0_#1D20261A]",
     gray: "bg-gray-50",
   };
   return (

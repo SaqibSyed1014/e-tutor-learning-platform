@@ -13,7 +13,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import CareerDetail from "./pages/CareerDetail";
-import Cart from "./pages/Cart";
+import ShoppingCart from "./pages/ShoppingCart.tsx";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ComingSoon from "./pages/ComingSoon";
@@ -28,11 +28,11 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Index />, name: 'Home' },
       { path: '/category/:id', element: <CategoryDetail />, name: 'Category' },
-      { path: '/about', element: <About />,   customData: { title: 'Home Page', description: 'This is the home page' } },
+      { path: '/about', element: <About />, name: 'About' },
       { path: '/contact', element: <Contact />, name: 'Contact' },
       { path: '/career', element: <Career />, name: 'Career' },
       { path: '/career/:id', element: <CareerDetail />, name: 'Career Detail' },
-      { path: '/cart', element: <Cart />, name: 'Cart' },
+      { path: '/shopping-cart', element: <ShoppingCart />, name: 'Shopping Cart' },
       { path: '/signin', element: <SignIn />, name: 'Sign In' },
       { path: '/signup', element: <SignUp />, name: 'Sign Up' },
       { path: '/coming-soon', element: <ComingSoon />, name: 'Coming Soon' },

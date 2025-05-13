@@ -152,6 +152,6 @@
     @apply flex flex-col gap-10;
   }
   .plain-link{
-    @apply flex gap-2 items-center text-etutor-primary text-sm font-medium;
+    @apply flex gap-2 items-center text-primary-500 text-sm font-medium hover:opacity-60 transition;
   }
 }
