@@ -2,11 +2,11 @@ import {ReactElement} from "react"
 import { courseCategories } from "@/@fake-db/collections/collections.tsx";
 
 export interface Course {
-  id: string;
+  id: number;
   title: string;
   category: CourseCategory;
   price: number;
-  originalPrice: number;
+  originalPrice?: number;
   discount?: number;
   rating: number;
   reviewCount: number;
@@ -16,11 +16,17 @@ export interface Course {
     name: string;
     avatar: string;
   };
+  coInstructor?: {
+    id: string;
+    name: string;
+    avatar: string;
+  };
   image: string;
   duration: number;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
   description?: string;
   learningPoints?: string[];
+  subtitle?: string
 }
 export interface CourseCategory {
   id: number;
@@ -34,7 +40,7 @@ export interface CourseCategory {
 
 const coursesData: Course[] = [
   {
-    id: '1',
+    id: 1,
     title: 'Machine Learning A-Z™: Hands-On Python & R in Data Science',
     category: courseCategories.DESIGN,
     price: 57,
@@ -47,16 +53,21 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    subtitle: ""
   },
   {
-    id: '2',
+    id: 2,
     title: 'The Complete 2021 Web Development Bootcamp',
     category: courseCategories.FINANCE,
-    price: 57,
-    originalPrice: 199.99,
+    price: 45,
     rating: 5.0,
     reviewCount: 357914,
     students: 28,
@@ -65,17 +76,22 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
   },
   {
-    id: '3',
+    id: 3,
     title: 'Learn Python Programming Masterclass',
     category: courseCategories.BUSINESS,
-    price: 57,
-    originalPrice: 199.99,
-    rating: 5.0,
+    price: 97,
+    originalPrice: 235.99,
+    rating: 2.0,
     reviewCount: 357914,
     students: 28,
     instructor: {
@@ -88,7 +104,7 @@ const coursesData: Course[] = [
     level: 'Beginner',
   },
   {
-    id: '4',
+    id: 4,
     title: 'The Complete Digital Marketing Course - 12 Courses in 1',
     category: courseCategories.MARKETING,
     price: 57,
@@ -101,12 +117,17 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
   },
   {
-    id: '5',
+    id: 5,
     title: 'React Level I: LifeUI Master/Teacher Program',
     category: courseCategories.DEVELOPMENTS,
     price: 57,
@@ -119,12 +140,17 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
   },
   {
-    id: '6',
+    id: 6,
     title: 'The Complete Foundation Stock Trading Course',
     category: courseCategories.LEGAL,
     price: 57,
@@ -142,7 +168,7 @@ const coursesData: Course[] = [
     level: 'Beginner',
   },
   {
-    id: '7',
+    id: 7,
     title: 'Become an Pro in Excel, Financial Modeling and Valuation',
     category: courseCategories.LIFESTYLE,
     price: 57,
@@ -160,7 +186,7 @@ const coursesData: Course[] = [
     level: 'Beginner',
   },
   {
-    id: '8',
+    id: 8,
     title: 'The Python Mega Course: Build 10 Real World Applications',
     category: courseCategories.HEALTH,
     price: 57,
@@ -171,6 +197,11 @@ const coursesData: Course[] = [
     instructor: {
       id: '1',
       name: 'Kevin Gilbert',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
     image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
@@ -184,7 +215,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '9',
+    id: 9,
     title: 'Copywriting - Become a Freelance Copywriter, your own boss',
     category: courseCategories.IT,
     price: 57,
@@ -207,7 +238,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '10',
+    id: 10,
     title: 'Google Analytics Certification - Learn How To Pass The Exam',
     category: courseCategories.OFFICE,
     price: 57,
@@ -230,7 +261,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '11',
+    id: 11,
     title: 'Google Analytics Certification - Learn How To Pass The Exam',
     category: courseCategories.MUSIC,
     price: 14.00,
@@ -243,6 +274,11 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
@@ -253,7 +289,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '12',
+    id: 12,
     title: 'Investing In Stocks The Complete Course! (13 Hour)',
     category: courseCategories.MARKETING,
     price: 14.00,
@@ -266,6 +302,11 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
@@ -276,7 +317,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '13',
+    id: 13,
     title: 'Adobe XD for Web Design: Essential Principles',
     category: courseCategories.BUSINESS,
     price: 14.00,
@@ -289,6 +330,11 @@ const coursesData: Course[] = [
       name: 'Kevin Gilbert',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     },
+    coInstructor: {
+      id: '1',
+      name: 'Guy Hawkins',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
+    },
     image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
@@ -299,7 +345,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '14',
+    id: 14,
     title: 'The Python Mega Course: Build 10 Real World Applications',
     category: courseCategories.DESIGN,
     price: 14.00,
@@ -322,7 +368,7 @@ const coursesData: Course[] = [
     ]
   },
   {
-    id: '15',
+    id: 15,
     title: 'Facebook Ads & Facebook Marketing MASTERY 2021 Course',
     category: courseCategories.BUSINESS,
     price: 57,
@@ -340,7 +386,7 @@ const coursesData: Course[] = [
     level: 'Beginner',
   },
   {
-    id: '16',
+    id: 16,
     title: '2021 Complete Python Bootcamp From Zero to Hero in Python',
     category: courseCategories.DEVELOPMENTS,
     price: 57,

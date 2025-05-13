@@ -2,12 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {Bell, Heart, Cart, BrandLogo, MagnifyingGlass} from "@/assets/icons/common-icons.tsx";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useLocation} from "react-router-dom";
 import {useState} from "react";
 import DropdownMenuWrapper from "@/components/DropdownMenuWrapper.tsx"
 
 
 const Navbar = () => {
+  const location = useLocation();
   const [selectedLang, selectLang] = useState('eng');
   const [selectedCurrency, selectCurrency] = useState('usd');
   const [selectedBrowse, selectBrowse] = useState('');
@@ -56,8 +57,6 @@ const Navbar = () => {
       label: 'Course'
     }
   ];
-
-
 
   return (
     <div className="w-full">
@@ -128,16 +127,16 @@ const Navbar = () => {
 
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-6 miscellenious-links">
             <button className="text-gray-900 hover:text-etutor-primary">
               <Bell />
             </button>
             <button className="text-gray-900 hover:text-etutor-primary">
               <Heart />
             </button>
-            <button className="text-gray-900 hover:text-etutor-primary">
+            <Link to="/shopping-cart" className={`hover:text-primary-500 ${location.pathname === '/shopping-cart' ? 'text-primary-500' : 'text-gray-900'}`}>
               <Cart />
-            </button>
+            </Link>
             <div className="space-x-3">
               <Button
                 variant="outline"

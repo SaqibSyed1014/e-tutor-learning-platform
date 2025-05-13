@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import {Breadcrumbs} from "@/components/Breadcrumbs.tsx";
 import {Rating} from "@/components/tiny/tiny-collection.tsx";
 import {XCircle, ArrowRight} from "@/assets/icons/common-icons.tsx";
+import coursesData, {Course} from "@/@fake-db/collections";
 
 interface CartItem {
     id: number;
@@ -20,46 +21,10 @@ interface CartItem {
 }
 
 const ShoppingCart = () => {
-    const [cartItems, setCartItems] = useState<CartItem[]>([
-        {
-            id: 1,
-            title: "The Python Mega Course: Build 10 Real World Applications",
-            subtitle: "",
-            instructor: "Leslie Alexander",
-            coInstructor: "Guy Hawkins",
-            price: 37.99,
-            originalPrice: 49.00,
-            rating: 4.7,
-            reviewCount: 451444,
-            image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            id: 2,
-            title: "Machine Learning A-Z™: Hands-On Python & R In Data Science",
-            subtitle: "",
-            instructor: "Bessie Cooper",
-            price: 9.99,
-            originalPrice: 29.99,
-            rating: 4.3,
-            reviewCount: 451444,
-            image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-        },
-        {
-            id: 3,
-            title: "Learn Ethical Hacking From Scratch",
-            subtitle: "",
-            instructor: "Marvin McKinney",
-            price: 13.99,
-            originalPrice: 39.99,
-            rating: 4.7,
-            reviewCount: 451444,
-            image: "https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-        }
-    ]);
+    const [cartItems, setCartItems] = useState<Course[]>([coursesData[0], coursesData[1], coursesData[2]])
 
     const [couponCode, setCouponCode] = useState("");
 
-    // Calculate totals
     const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
     const couponDiscount = 8; // 8%
     const discountAmount = (subtotal * couponDiscount) / 100;
@@ -71,7 +36,6 @@ const ShoppingCart = () => {
     };
 
     const moveToWishlist = (id: number) => {
-        // In a real app, this would add to wishlist and remove from cart
         console.log("Moved item to wishlist:", id);
         removeFromCart(id);
     };
@@ -79,7 +43,6 @@ const ShoppingCart = () => {
     const handleApplyCoupon = () => {
         if (couponCode) {
             console.log("Applied coupon:", couponCode);
-            // In a real app, this would validate the coupon code and apply it
         }
     };
 
@@ -126,14 +89,14 @@ const ShoppingCart = () => {
                                                     </div>
                                                     <div className="w-full max-w-[312px] flex flex-col justify-between">
                                                         <div className="flex flex-col gap-2">
-                                                            <Rating rating={5} showCount={true}
+                                                            <Rating rating={item.rating} showCount={true}
                                                                     count={item.reviewCount.toLocaleString()}/>
                                                             <h3 className="font-medium text-base">{item.title}</h3>
                                                         </div>
                                                         <div className="text-sm text-gray-700">
                                                             <span className="text-gray-400">Course by: </span>
-                                                            {item.instructor} {item.coInstructor &&
-                                                            <span> • {item.coInstructor}</span>}
+                                                            {item.instructor.name} {item.coInstructor &&
+                                                            <span> • {item.coInstructor.name}</span>}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -143,7 +106,7 @@ const ShoppingCart = () => {
                                                             ${item.price.toFixed(2)}
                                                         </span>
                                                         <span className="text-gray-500 line-through">
-                                                            ${item.originalPrice.toFixed(2)}
+                                                            {item.originalPrice && `$${item.originalPrice.toFixed(2)}`}
                                                         </span>
                                                     </div>
                                                     <Button

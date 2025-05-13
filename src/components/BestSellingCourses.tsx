@@ -1,7 +1,7 @@
 
 import { bestSellingCourses } from "@/@fake-db/collections/index.ts";
 import { Link } from "react-router-dom";
-import {CourseCard} from "@/components/tiny/tiny-collection.tsx";
+import {CourseCard} from "@/components/CourseCard.tsx";
 
 
 const BestSellingCourses = () => {

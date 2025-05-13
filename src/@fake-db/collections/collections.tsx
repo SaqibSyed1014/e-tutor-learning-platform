@@ -8,6 +8,7 @@ import {
     Receipt, SlackLogo, VerizonLogo, YoutubeLogo
 } from "@/assets/icons/icons.tsx";
 import {Company, Perk, JobPosition} from "@/@fake-db/types/collections-types.ts";
+import {useState} from "react";
 
 export const courseCategories = {
     LEGAL: {

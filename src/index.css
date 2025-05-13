@@ -144,6 +144,9 @@
   .top-bar a:hover::before {
     @apply scale-x-100;
   }
+  .miscellaneous-links a.active{
+    @apply text-primary-500;
+  }
 
   .section-heading{
     @apply text-[40px] leading-[48px] font-semibold text-center;

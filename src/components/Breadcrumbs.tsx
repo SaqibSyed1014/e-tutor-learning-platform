@@ -21,7 +21,7 @@ export const Breadcrumbs = () => {
   return (
       <div className="bg-gray-50 py-10">
           <div className="container">
-              <h1 className="text-2xl text-center capitalize">{location.pathname.split('/')[1]}</h1>
+              <h1 className="text-2xl text-center capitalize">{location.pathname.split('/')[1].replace('-', ' ')}</h1>
               <div className="flex items-center justify-center space-x-2 mt-2 text-gray-600 text-sm">
                 <Link to="/" className="hover:text-gray-700">Home</Link>
                   {segments.length > 0 && <span>/</span>}
