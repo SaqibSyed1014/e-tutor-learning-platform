@@ -1,10 +1,10 @@
 
-import { trustedCompanies } from "@/@fake-db/courses/collections.tsx";
+import { trustedCompanies } from "@/@fake-db/collections/collections.tsx";
 import { ArrowRight, Users, Globe, Award, Check } from "lucide-react";
 
-const TrustedCompanies = ({ title, showStats }) => {
+const TrustedCompanies = ({ title, showStats, BGColor }) => {
   return (
-      <section className="bg-gray-50 py-16">
+      <section className={`bg-gray-50 py-16 ${BGColor}`}>
           <div className="container">
             <div className="flex flex-col gap-20">
               <div className="flex max-md:flex-col items-center justify-between gap-20">

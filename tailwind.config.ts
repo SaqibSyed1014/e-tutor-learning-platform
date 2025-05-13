@@ -14,8 +14,7 @@ export default {
 		container: {
 			center: true,
 			padding: {
-				DEFAULT: '1rem',
-				lg: '2rem'
+				lg: '0'
 			},
 			screens: {
 				'2xl': '1320px'
@@ -88,6 +87,7 @@ export default {
 				},
 				warning: {
 					100: '#FFF2E5',
+					500: '#FD8E1F',
 					800: '#65390C'
 				},
 				error: {

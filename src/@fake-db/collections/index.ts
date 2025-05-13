@@ -1,6 +1,5 @@
-import {any} from "zod";
 import {ReactElement} from "react"
-import { courseCategories } from "@/@fake-db/courses/collections.tsx";
+import { courseCategories } from "@/@fake-db/collections/collections.tsx";
 
 export interface Course {
   id: string;

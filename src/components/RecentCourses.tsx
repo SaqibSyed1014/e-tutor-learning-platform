@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { recentlyAddedCourses, getSingleCourse } from "@/@fake-db/courses";
+import { recentlyAddedCourses, getSingleCourse } from "@/@fake-db/collections/index.ts";
 import { Star, Users, Clock, Heart, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";

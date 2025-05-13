@@ -118,6 +118,9 @@
   label{
     @apply text-sm text-gray-900 pb-1.5 block;
   }
+  ul li{
+    @apply text-inherit;
+  }
 }
 
 @layer utilities{

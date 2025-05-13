@@ -1,5 +1,5 @@
 import {Check, Clock, Star, Users} from "lucide-react";
-import {bestSellingCourses, CourseCategory} from "@/@fake-db/courses";
+import {bestSellingCourses, CourseCategory} from "src/@fake-db/collections";
 import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";

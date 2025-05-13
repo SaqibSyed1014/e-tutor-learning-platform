@@ -1,7 +1,7 @@
 
 import {Card, CardContent, CardFooter} from "@/components/ui/card";
-import { featuredCourses } from "@/@fake-db/courses";
-import { Star, Users, Clock } from "lucide-react";
+import { featuredCourses } from "@/@fake-db/collections/index.ts";
+import { Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import {CategoryBadge, Rating, StudentCount} from "@/components/tiny/tiny-collection.tsx";
 import RecentCourses from "@/components/RecentCourses.tsx";
