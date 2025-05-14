@@ -291,7 +291,7 @@ const SignUp = () => {
 
                   <div className="flex-1 text-center"><span>Facebook</span></div>
                 </button>
-                <button className="flex items-center border border-gray-300 hover:bg-gray-50">
+                <button className="flex items-center border border-gray-100 hover:bg-gray-50">
                   <div className="size-11 grid place-items-center border-r border-gray-100 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path d="M13.7493 0C12.6831 0.0737496 11.4368 0.756246 10.7106 1.64499C10.0481 2.45124 9.5031 3.64873 9.7156 4.81247C10.8806 4.84872 12.0843 4.14998 12.7818 3.24623C13.4343 2.40499 13.9281 1.21499 13.7493 0Z" fill="black"/>

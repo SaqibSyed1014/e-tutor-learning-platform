@@ -138,15 +138,18 @@ const Navbar = () => {
               <Cart />
             </Link>
             <div className="space-x-3">
-              <Button
-                variant="outline"
-                className=""
-            >
-              Create Account
-            </Button>
-              <Button>
-                Sign in
-              </Button>
+              <Link to="/sign-up">
+                <Button
+                  variant="outline"
+                >
+                  Create Account
+                </Button>
+              </Link>
+              <Link to="/sign-in">
+                <Button>
+                  Sign in
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
