@@ -96,6 +96,18 @@ const Footer = () => {
                   <ArrowRight classes="opacity-0 group-hover:opacity-100 text-etutor-primary" />
                 </Link>
               </li>
+              <li>
+                <Link to="/coming-soon" className="flex gap-2 pb-1 text-gray-500 hover:text-white hover:shadow-[0px_-1.5px_0px_0px_#FF6636_inset] group">
+                  Coming Soon
+                  <ArrowRight classes="opacity-0 group-hover:opacity-100 text-etutor-primary" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/404" className="flex gap-2 pb-1 text-gray-500 hover:text-white hover:shadow-[0px_-1.5px_0px_0px_#FF6636_inset] group">
+                  404 Not Found
+                  <ArrowRight classes="opacity-0 group-hover:opacity-100 text-etutor-primary" />
+                </Link>
+              </li>
             </ul>
           </div>
 
