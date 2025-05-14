@@ -12,15 +12,17 @@ export default {
 	prefix: "",
 	theme: {
 		container: {
-			center: true,
-			padding: {
-				lg: '0'
-			},
-			screens: {
-				'2xl': '1320px'
-			}
+			center: true
 		},
 		extend: {
+			container: {
+				padding: {
+					'DEFAULT': '1rem',
+				},
+				screens: {
+					'2xl': '1352px'
+				}
+			},
 			fontSize: {
 				'sm': ['14px', '22px']
 			},

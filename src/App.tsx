@@ -7,18 +7,19 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/404NotFound.tsx";
 import CategoryDetail from "./pages/CategoryDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import CareerDetail from "./pages/CareerDetail";
 import ShoppingCart from "./pages/ShoppingCart.tsx";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
-import ComingSoon from "./pages/ComingSoon";
 import FAQ from "./pages/FAQ";
 import UnauthenticatedLayout from "@/layouts/Unauthenticated";
+import MinimalLayout from "@/layouts/minimal"
+import SignIn from "./pages/forms/sign-in.tsx"
+import SignUp from "./pages/forms/sign-up.tsx"
+import ComingSoon from "./pages/coming-soon.tsx"
 
 const queryClient = new QueryClient();
 
@@ -33,10 +34,15 @@ const router = createBrowserRouter([
       { path: '/career', element: <Career />, name: 'Career' },
       { path: '/career/:id', element: <CareerDetail />, name: 'Career Detail' },
       { path: '/shopping-cart', element: <ShoppingCart />, name: 'Shopping Cart' },
-      { path: '/signin', element: <SignIn />, name: 'Sign In' },
-      { path: '/signup', element: <SignUp />, name: 'Sign Up' },
-      { path: '/coming-soon', element: <ComingSoon />, name: 'Coming Soon' },
       { path: '/faq', element: <FAQ />, name: 'FAQ' },
+    ],
+  },
+  {
+    element: <MinimalLayout />,
+    children: [
+      { path: '/sign-in', element: <SignIn />, name: 'Sign in', handle: { slot: 'auth' } },
+      { path: '/sign-up', element: <SignUp />, name: 'Sign up', handle: { slot: 'auth' } },
+      { path: '/coming-soon', element: <ComingSoon />, name: 'Coming Soon', handle: { slot: 'comingSoon' } },
     ],
   },
   {

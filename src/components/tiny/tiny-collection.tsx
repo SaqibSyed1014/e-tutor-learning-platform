@@ -1,5 +1,6 @@
 import {Users} from "lucide-react";
 import {CourseCategory} from "src/@fake-db/collections";
+import {Facebook, Instagram, Linkedin, Twitter, Youtube} from "@/assets/icons/icons.tsx";
 
 export const StudentCount = ({ count, showIcon }: { count?: string | number; showIcon: boolean }) => {
     return (
@@ -44,4 +45,44 @@ export const Rating = ({ rating, showCount, count }: { rating?: number; showCoun
     )
 }
 
+export const SocialMediaLinks = ({ inverted } : { inverted?: boolean }) => {
+    const socialLinks = [
+        {
+            name: '',
+            icon: <Facebook />,
+            link: ''
+        },
+        {
+            name: '',
+            icon: <Instagram />,
+            link: ''
+        },
+        {
+            name: '',
+            icon: <Linkedin />,
+            link: ''
+        },
+        {
+            name: '',
+            icon: <Twitter />,
+            link: ''
+        },
+        {
+            name: '',
+            icon: <Youtube />,
+            link: ''
+        }
+    ]
+    return (
+        <div className="flex space-x-3">
+            {socialLinks.map((item, index) => {
+                return (
+                    <a key={index} href="#" className={`${inverted ? 'bg-gray-50 text-gray-700 hover:text-white' : 'bg-[#363B4766] text-white'} size-[46px] flex justify-center items-center p-2 hover:bg-primary-500 hover:shadow-[0_6px_20px_0_#CC522B80] transition-colors`}>
+                        {item.icon}
+                    </a>
+                )
+            })}
+        </div>
+    )
+}
 

@@ -5,35 +5,9 @@ import {Facebook, Instagram, Linkedin, Twitter, Youtube} from "@/assets/icons/ic
 import {DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel} from "@/components/ui/dropdown-menu.tsx";
 import {useState} from "react";
 import DropdownMenuWrapper from "@/components/DropdownMenuWrapper.tsx";
+import {SocialMediaLinks} from "@/components/tiny/tiny-collection.tsx";
 
 const Footer = () => {
-  const socialLinks = [
-    {
-      name: '',
-      icon: <Facebook />,
-      link: ''
-    },
-    {
-      name: '',
-      icon: <Instagram />,
-      link: ''
-    },
-    {
-      name: '',
-      icon: <Linkedin />,
-      link: ''
-    },
-    {
-      name: '',
-      icon: <Twitter />,
-      link: ''
-    },
-    {
-      name: '',
-      icon: <Youtube />,
-      link: ''
-    }
-  ]
   const [selectedLang, selectLang] = useState('eng');
 
   const languages = [
@@ -62,15 +36,7 @@ const Footer = () => {
             <p className="text-gray-500 mt-5 mb-6">
               Aliquam rhoncus ligula est, non pulvinar elit <br /> convallis nec. Donec mattis dolo at
             </p>
-            <div className="flex space-x-3">
-              {socialLinks.map((item, index) => {
-                return (
-                    <a key={index} href="#" className="size-[46px] flex justify-center items-center bg-[#363B4766] text-white p-2 hover:bg-etutor-primary hover:shadow-[0_6px_20px_0_#CC522B80] transition-colors">
-                      {item.icon}
-                    </a>
-                )
-              })}
-            </div>
+            <SocialMediaLinks />
           </div>
 
           <div>
