@@ -1,7 +1,6 @@
 
-import React from 'react';
 import { cn } from '@/lib/utils';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import {ArrowRight, ArrowLeft} from "@/assets/icons/common-icons.tsx"
 
 interface CustomPaginationProps {
     currentPage: number;
@@ -50,31 +49,32 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
     const pageNumbers = getPageNumbers();
 
     return (
-        <div className={cn("flex items-center justify-center gap-2 my-8", className)}>
+        <div className={cn("flex items-center justify-center gap-4", className)}>
             <button
                 onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
-                className="h-11 w-11 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-gray-50 disabled:opacity-50"
+                className="size-12 flex items-center justify-center rounded-full text-primary-500 transition hover:bg-primary-100 disabled:hover:bg-transparent disabled:text-primary-100"
                 aria-label="Previous page"
             >
-                <ArrowLeft size={20} />
+                <ArrowLeft />
             </button>
 
-            {pageNumbers.map((pageNumber, index) => {
+            <div className="flex">
+                {pageNumbers.map((pageNumber, index) => {
                 // Check if we need to insert an ellipsis
                 const previousPage = pageNumbers[index - 1];
                 if (previousPage && pageNumber - previousPage > 1) {
                     return (
                         <React.Fragment key={`${pageNumber}-ellipsis`}>
-                            <div className="h-11 w-11 flex items-center justify-center">...</div>
+                            <div className="size-12 flex items-center justify-center">...</div>
                             <button
                                 key={pageNumber}
                                 onClick={() => onPageChange(pageNumber)}
                                 className={cn(
-                                    "h-11 w-11 flex items-center justify-center rounded-full font-medium",
+                                    "size-12 flex items-center justify-center rounded-full font-medium",
                                     currentPage === pageNumber
-                                        ? "bg-orange-500 text-white"
-                                        : "border border-gray-200 text-gray-700 hover:bg-gray-50"
+                                        ? "bg-primary-500 text-white"
+                                        : "text-gray-900 hover:text-primary-500 hover:bg-primary-100 transition"
                                 )}
                                 aria-label={`Page ${pageNumber}`}
                                 aria-current={currentPage === pageNumber ? "page" : undefined}
@@ -90,10 +90,10 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
                         key={pageNumber}
                         onClick={() => onPageChange(pageNumber)}
                         className={cn(
-                            "h-11 w-11 flex items-center justify-center rounded-full font-medium",
+                            "size-12 flex items-center justify-center rounded-full font-medium",
                             currentPage === pageNumber
-                                ? "bg-orange-500 text-white"
-                                : "border border-gray-200 text-gray-700 hover:bg-gray-50"
+                                ? "bg-primary-500 text-white"
+                                : "text-gray-900 hover:text-primary-500 hover:bg-primary-100 transition"
                         )}
                         aria-label={`Page ${pageNumber}`}
                         aria-current={currentPage === pageNumber ? "page" : undefined}
@@ -101,15 +101,15 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
                         {String(pageNumber).padStart(2, '0')}
                     </button>
                 );
-            })}
+            })}</div>
 
             <button
                 onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                 disabled={currentPage === totalPages}
-                className="h-11 w-11 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-gray-50 disabled:opacity-50"
+                className="size-12 flex items-center justify-center rounded-full text-primary-500 transition hover:bg-primary-100 disabled:hover:bg-transparent disabled:text-primary-100"
                 aria-label="Next page"
             >
-                <ArrowRight size={20} />
+                <ArrowRight />
             </button>
         </div>
     );

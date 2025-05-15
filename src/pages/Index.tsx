@@ -17,8 +17,8 @@ const Index = () => {
           <BestSellingCourses/>
           <FeaturedCourses/>
           <BecomeInstructor/>
-          <TopInstructors/>
-          <TrustedCompanies/>
+          <TopInstructors title="Top instructor of the month" aboveTheSection={true} showBottomLine={true} />
+          <TrustedCompanies BGColor="bg-white" />
           <CtaSection/>
       </>
   );

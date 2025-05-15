@@ -53,6 +53,15 @@ export const ArrowRight = ({ classes }) => {
   )
 }
 
+export const ArrowLeft = () => {
+  return (
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+          <path d="M17.25 8H0.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.5 1.25L0.75 8L7.5 14.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+  )
+}
+
 export const CaretDownLarge = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

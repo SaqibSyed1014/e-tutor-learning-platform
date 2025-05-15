@@ -2,18 +2,17 @@ import {CourseCard} from "@/components/CourseCard.tsx";
 import { useState } from "react";
 import { Input } from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button.tsx";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select.tsx";
 import FilterSidebar from "./FilterSidebar.tsx";
 import SearchSuggestions from "@/components/SearchSuggestions";
 import CustomPagination from "@/components/CustomPagination";
 import { useCourseFilter } from "@/hooks/useCourseFilter";
-import { SortOption } from "@/@fake-db/courses/type.ts";
+import {FilterState, SortOption} from "@/@fake-db/courses/type.ts";
 import {MagnifyingGlass} from "@/assets/icons/common-icons.tsx";
 import {FilterFaders} from "@/assets/icons/icons.tsx";
 import DropdownMenuWrapper from "@/components/DropdownMenuWrapper.tsx";
 import {sortOptions} from "@/@fake-db/courses";
 
-const Courses = () => {
+const Courses = ({ preSelectedFilters }: { preSelectedFilters?: FilterState }) => {
     const [showFilters, setShowFilters] = useState(false);
     const [searchInput, setSearchInput] = useState("");
     const {
@@ -26,6 +25,9 @@ const Courses = () => {
         setFilters,
         setSortOption,
     } = useCourseFilter();
+
+    if (preSelectedFilters.categories.length)
+        filters.categories = preSelectedFilters.categories;
 
     const handleSearch = (text :string) => {
         if (!text.length) setSearchInput('');

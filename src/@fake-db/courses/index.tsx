@@ -24,7 +24,8 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
-    subtitle: ""
+    subtitle: "",
+    isBestSelling: true
   },
   {
     id: 2,
@@ -47,6 +48,7 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: false
   },
   {
     id: 3,
@@ -65,6 +67,7 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1587691592099-24045742c181?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: true
   },
   {
     id: 4,
@@ -88,6 +91,7 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: true
   },
   {
     id: 5,
@@ -111,6 +115,7 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: false
   },
   {
     id: 6,
@@ -129,11 +134,12 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: false
   },
   {
     id: 7,
     title: 'Become an Pro in Excel, Financial Modeling and Valuation',
-    category: courseCategories.LIFESTYLE,
+    category: courseCategories.LEGAL,
     price: 90,
     originalPrice: 115.00,
     rating: 4.8,
@@ -147,6 +153,7 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: true
   },
   {
     id: 8,
@@ -175,7 +182,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: true
   },
   {
     id: 9,
@@ -198,7 +206,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: true
   },
   {
     id: 10,
@@ -221,7 +230,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: true
   },
   {
     id: 11,
@@ -249,7 +259,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: false
   },
   {
     id: 12,
@@ -277,7 +288,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: false
   },
   {
     id: 13,
@@ -305,7 +317,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: true
   },
   {
     id: 14,
@@ -328,7 +341,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create web applications with Python'
-    ]
+    ],
+    isBestSelling: false
   },
   {
     id: 15,
@@ -347,6 +361,7 @@ export const coursesData: Course[] = [
     image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80',
     duration: 6,
     level: 'Beginner',
+    isBestSelling: true
   },
   {
     id: 16,
@@ -371,7 +386,8 @@ export const coursesData: Course[] = [
       'Learn to use Python professionally, learning both Python 2 and Python 3',
       'Create games with Python, like Tic Tac Toe and Blackjack',
       'Create games with Python, like Tic Tac Toe and Blackjack'
-    ]
+    ],
+    isBestSelling: false
   }
 ];
 

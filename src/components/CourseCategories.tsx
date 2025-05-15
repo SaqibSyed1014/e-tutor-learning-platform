@@ -43,7 +43,7 @@ const CategoryCard = ({ icon, title, courses, bgColor }: CategoryCardProps) => {
         </div>
         <div>
           <h3 className="text-base font-medium text-etutor-darkblue">{title}</h3>
-          <p className="text-sm text-gray-600">{courses}</p>
+          <p className="text-sm text-gray-600">{courses} Courses</p>
         </div>
       </div>
     </div>
@@ -51,94 +51,21 @@ const CategoryCard = ({ icon, title, courses, bgColor }: CategoryCardProps) => {
 };
 
 const CourseCategories = () => {
-  const categories = [
-    {
-      icon: <Processor />,
-      title: "Legal",
-      courses: "55,456 Courses",
-      bgColor: "#EBEBFF",
-    },
-    {
-      icon: <Handshake />,
-      title: "Business",
-      courses: "15,653 Courses",
-      bgColor: "#E1F7E3",
-    },
-    {
-      icon: <CreditCard />,
-      title: "Finance & Accounting",
-      courses: "24,456 Courses",
-      bgColor: "#FFF2E5",
-    },
-    {
-      icon: <ChartBarHorizontal />,
-      title: "IT & Software",
-      courses: "35,675 Courses",
-      bgColor: "#FFF0F0",
-    },
-    {
-      icon: <BugDroid />,
-      title: "Personal Development",
-      courses: "28,764 Courses",
-      bgColor: "#ffffff",
-    },
-    {
-      icon: <Receipt />,
-      title: "Office Productivity",
-      courses: "12,556 Courses",
-      bgColor: "#F5F7FA",
-    },
-    {
-      icon: <MegaPhoneSpeaker />,
-      title: "Marketing",
-      courses: "32,546 Courses",
-      bgColor: "#EBEBFF",
-    },
-    {
-      icon: <Camera />,
-      title: "Photography & Video",
-      courses: "9,546 Courses",
-      bgColor: "#F5F7FA",
-    },
-    {
-      icon: <Package />,
-      title: "Lifestyle",
-      courses: "16,742 Courses",
-      bgColor: "#FFF2E5",
-    },
-    {
-      icon: <PenNib />,
-      title: "Design",
-      courses: "13,265 Courses",
-      bgColor: "#FFEEE8",
-    },
-    {
-      icon: <FirstAidKit />,
-      title: "Health & Fitness",
-      courses: "15,784 Courses",
-      bgColor: "#E1F7E3",
-    },
-    {
-      icon: <Headphones />,
-      title: "Music",
-      courses: "8,532 Courses",
-      bgColor: "#FFF2E5",
-    },
-  ];
-
   return (
     <div className="container py-20">
       <div className="section-layout">
         <h2 className="section-heading">Browse top category</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {topCourses.map((category, index) => (
-              <CategoryCard
-                  key={index}
-                  icon={category.icon}
-                  title={category.title}
-                  courses={category.courses}
-                  bgColor={category.color}
-              />
+              <Link to={`/category/${category.id}`}>
+                <CategoryCard
+                    key={index}
+                    icon={category.icon}
+                    title={category.title}
+                    courses={category.courses}
+                    bgColor={category.color}
+                />
+              </Link>
           ))}
         </div>
         <div className="flex gap-3 items-center text-sm mx-auto">

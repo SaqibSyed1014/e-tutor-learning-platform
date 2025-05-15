@@ -19,7 +19,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <Processor />
     },
     DESIGN: {
-        id: 1,
+        id: 2,
         title: "Design",
         courses: "13,265",
         color: 'primary',
@@ -27,7 +27,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <PenNib />,
     },
     DEVELOPMENTS: {
-        id: 2,
+        id: 3,
         title: 'Developments',
         courses: "13,265",
         color: 'secondary',
@@ -35,7 +35,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <PenNib />,
     },
     BUSINESS: {
-        id: 3,
+        id: 4,
         title: 'Business',
         courses: "52,622",
         color: 'success',
@@ -75,7 +75,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <Receipt />,
     },
     MARKETING: {
-        id: 4,
+        id: 9,
         title: 'Marketing',
         courses: "12,068",
         color: 'secondary',
@@ -83,7 +83,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <MegaPhoneSpeaker />,
     },
     PHOTOGRAPHY: {
-        id: 9,
+        id: 10,
         title: 'Photography & Video',
         courses: "12,068",
         color: 'gray',
@@ -91,7 +91,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <Camera />
     },
     LIFESTYLE: {
-        id: 10,
+        id: 11,
         title: 'Lifestyle',
         courses: "2,068",
         color: 'warning',
@@ -100,7 +100,7 @@ export const courseCategories: Record<string, CourseCategory> = {
 
     },
     HEALTH: {
-        id: 11,
+        id: 12,
         title: 'Health & Fitness',
         courses: "1,665",
         color: 'success',
@@ -108,7 +108,7 @@ export const courseCategories: Record<string, CourseCategory> = {
         icon: <FirstAidKit />,
     },
     MUSIC: {
-        id: 12,
+        id: 13,
         title: 'Music',
         courses: "1,665",
         color: 'warning',

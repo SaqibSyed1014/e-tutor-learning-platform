@@ -27,6 +27,7 @@ export interface Course {
     learningPoints?: string[];
     subtitle?: string;
     categoryLabel?: string;
+    isBestSelling: boolean
 }
 
 export type SortOption = 'trending' | 'high-rating' | 'lowest-rating';
