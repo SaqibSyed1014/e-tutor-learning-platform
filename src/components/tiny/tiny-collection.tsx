@@ -5,10 +5,13 @@ import {Facebook, Instagram, Linkedin, Twitter, Youtube} from "@/assets/icons/ic
 export const StudentCount = ({ count, showIcon }: { count?: string | number; showIcon: boolean }) => {
     return (
         <div className="flex gap-1.5 items-center">
-            {showIcon && <Users className="h-4 w-4 text-gray-400"/>}
+            {showIcon && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 12.5C12.7614 12.5 15 10.2614 15 7.5C15 4.73858 12.7614 2.5 10 2.5C7.23858 2.5 5 4.73858 5 7.5C5 10.2614 7.23858 12.5 10 12.5Z" stroke="#564FFD" stroke-width="1.5" stroke-miterlimit="10"/>
+                <path d="M2.42114 16.8743C3.18955 15.5442 4.29443 14.4398 5.6248 13.672C6.95517 12.9042 8.46417 12.5 10.0002 12.5C11.5363 12.5 13.0453 12.9043 14.3756 13.6721C15.706 14.44 16.8108 15.5444 17.5792 16.8744" stroke="#564FFD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>}
 
             <div className="text-sm">
-                <span className="text-gray-700 font-medium">{count ?? '265.7K'}</span>
+                <span className="text-gray-700 font-medium">{count?.toLocaleString() ?? '265.7K'}</span>
                 <span className="text-gray-500"> students</span>
             </div>
         </div>
@@ -33,7 +36,7 @@ export const CategoryBadge: React.FC<{ category: CourseCategory }> = ({ category
   )
 }
 
-export const Rating = ({ rating, showCount, count }: { rating?: number; showCount: boolean; count?: string | number }) => {
+export const Rating = ({ rating, showCount, count }: { rating?: string | number; showCount: boolean; count?: string | number }) => {
     return (
         <div className="flex items-center gap-1 text-sm">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

@@ -25,5 +25,18 @@ export interface Course {
     level: 'Beginner' | 'Intermediate' | 'Advanced';
     description?: string;
     learningPoints?: string[];
-    subtitle?: string
+    subtitle?: string;
+    categoryLabel?: string;
+}
+
+export type SortOption = 'trending' | 'high-rating' | 'lowest-rating';
+
+export interface FilterState {
+    search: string;
+    categories: string[];
+    tools: string[];
+    ratings: number[];
+    levels: string[];
+    priceRange: [number, number];
+    duration: string[];
 }

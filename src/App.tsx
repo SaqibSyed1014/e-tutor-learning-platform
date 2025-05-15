@@ -20,7 +20,7 @@ import MinimalLayout from "@/layouts/minimal"
 import SignIn from "./pages/forms/sign-in.tsx"
 import SignUp from "./pages/forms/sign-up.tsx"
 import ComingSoon from "./pages/coming-soon.tsx"
-import CourseListing from "@/pages/CourseListing.tsx";
+import CourseListing from "@/pages/website/course-listing/Index.tsx";
 
 const queryClient = new QueryClient();
 

@@ -121,6 +121,9 @@
   ul li{
     @apply text-inherit;
   }
+  hr{
+    @apply h-px w-full bg-gray-100;
+  }
 }
 
 @layer utilities{

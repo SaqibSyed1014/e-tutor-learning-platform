@@ -1,4 +1,3 @@
-import {bestSellingCourses} from "src/@fake-db/courses";
 import {useEffect, useRef, useState} from "react";
 import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
 import {Check, Clock} from "lucide-react";
@@ -6,8 +5,9 @@ import {Button} from "@/components/ui/button.tsx";
 import {Heart} from "@/assets/icons/common-icons.tsx";
 import {Link} from "react-router-dom";
 import {CategoryBadge, Rating, StudentCount} from "@/components/tiny/tiny-collection.tsx";
+import {Course} from "@/@fake-db/courses/type.ts";
 
-export const CourseCard = ({ course, inListForm }: { course: typeof bestSellingCourses[0], inListForm?: boolean }) => {
+export const CourseCard = ({ course, inListForm }: { course: Course, inListForm?: boolean }) => {
     const popupRef = useRef<HTMLDivElement>(null);
     const [positionLeft, setPositionLeft] = useState(false);
 
@@ -62,7 +62,7 @@ export const CourseCard = ({ course, inListForm }: { course: typeof bestSellingC
                                         </div>
                                         <span className="text-gray-700">{course.instructor.name}</span>
                                     </div>
-                                    <Rating showCount={true} />
+                                    <Rating rating={course.rating} showCount={true} />
                                 </div>
                             </div>
                         </CardContent>
@@ -100,8 +100,11 @@ export const CourseCard = ({ course, inListForm }: { course: typeof bestSellingC
                     </h3>
                 </CardContent>
                 <CardFooter className="flex items-center justify-between">
-                    <Rating showCount={false}/>
-                    <StudentCount showIcon={false}/>
+                    <Rating
+                        rating={Number.isInteger(course.rating) ? `${course.rating}.0` : course.rating}
+                        showCount={false}
+                    />
+                    <StudentCount count={course.students} showIcon={true} />
                 </CardFooter>
             </Card>}
 
@@ -178,9 +181,11 @@ export const CourseCard = ({ course, inListForm }: { course: typeof bestSellingC
 
 
                 <div className="px-6 pt-5 flex flex-col items-stretch gap-3 mb-10">
-                    <Button>
-                        Add To Cart
-                    </Button>
+                    <Link to="/shopping-cart">
+                        <Button className="w-full">
+                            Add To Cart
+                        </Button>
+                    </Link>
 
                     <Link to={`/course-detail/${course.id}`}>
                         <Button variant="outline" className="w-full">
