@@ -1,44 +1,7 @@
-import {ReactElement} from "react"
-import { courseCategories } from "@/@fake-db/collections/collections.tsx";
+import { courseCategories } from "@/@fake-db/courseCategories/index.tsx";
+import { Course } from "@/@fake-db/courses/type.ts"
 
-export interface Course {
-  id: number;
-  title: string;
-  category: CourseCategory;
-  price: number;
-  originalPrice?: number;
-  discount?: number;
-  rating: number;
-  reviewCount: number;
-  students: number;
-  instructor: {
-    id: string;
-    name: string;
-    avatar: string;
-  };
-  coInstructor?: {
-    id: string;
-    name: string;
-    avatar: string;
-  };
-  image: string;
-  duration: number;
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
-  description?: string;
-  learningPoints?: string[];
-  subtitle?: string
-}
-export interface CourseCategory {
-  id: number;
-  title: string,
-  courses: string
-  color: string;
-  isBestSelling: boolean
-  icon: ReactElement
-}
-
-
-const coursesData: Course[] = [
+export const coursesData: Course[] = [
   {
     id: 1,
     title: 'Machine Learning A-Z™: Hands-On Python & R in Data Science',

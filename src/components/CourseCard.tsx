@@ -1,4 +1,4 @@
-import {bestSellingCourses} from "@/@fake-db/collections";
+import {bestSellingCourses} from "src/@fake-db/courses";
 import {useEffect, useRef, useState} from "react";
 import {Card, CardContent, CardFooter} from "@/components/ui/card.tsx";
 import {Check, Clock} from "lucide-react";

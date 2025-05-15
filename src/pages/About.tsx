@@ -1,13 +1,12 @@
 
 import TrustedCompanies from "@/components/TrustedCompanies.tsx";
 import {Breadcrumbs} from "@/components/Breadcrumbs.tsx";
-import {trustedCompanies} from "@/@fake-db/collections/collections.tsx";
+import {trustedCompanies} from "@/@fake-db/collections/index.tsx";
 import {OurGallery} from "@/components/OurGallery.tsx";
 
 const About = () => {
   return (
     <>
-
         <Breadcrumbs />
 
         <section className="py-20">

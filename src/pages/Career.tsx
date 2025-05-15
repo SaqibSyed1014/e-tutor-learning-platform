@@ -4,12 +4,11 @@ import {CardContent, Card, CardFooter} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {CheckCircle, ArrowRight, MapPin, BriefCase, ClipboardText} from "@/assets/icons/common-icons.tsx";
 import {OurGallery} from "@/components/OurGallery.tsx";
-import {perksAndBenefits, openPositions} from "@/@fake-db/collections/collections.tsx";
+import {perksAndBenefits, openPositions} from "@/@fake-db/collections/index.tsx";
 import TrustedCompanies from "@/components/TrustedCompanies.tsx";
 
 
 const Career = () => {
-
   return (
     <>
         <Breadcrumbs />

@@ -1,6 +1,6 @@
 
 
-import { recentlyAddedCourses } from "@/@fake-db/collections/index.ts";
+import { recentlyAddedCourses } from "@/@fake-db/courses/index.tsx";
 
 import { Button } from "@/components/ui/button";
 import {CourseCard} from "@/components/CourseCard.tsx";

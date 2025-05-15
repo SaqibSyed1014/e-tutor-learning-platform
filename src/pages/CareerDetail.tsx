@@ -1,20 +1,12 @@
 
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { openPositions} from "@/@fake-db/collections/collections.tsx";
+import { openPositions} from "@/@fake-db/collections/index.tsx";
 import {ArrowRight, MapPin, BriefCase, ClipboardText, Check} from "@/assets/icons/common-icons.tsx";
-import {CardContent, Card, CardFooter} from "@/components/ui/card.tsx";
 import {Button} from "@/components/ui/button.tsx";
 
 const CareerDetail = () => {
     const { id } = useParams<{ id: string }>();
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        portfolio: "",
-        message: "",
-        resume: null as File | null,
-    });
 
     // Find the job based on the ID from the URL
     const job = openPositions.find(job => job.id === Number(id));

@@ -1,5 +1,5 @@
 import {Users} from "lucide-react";
-import {CourseCategory} from "src/@fake-db/collections";
+import {CourseCategory} from "src/@fake-db/courses";
 import {Facebook, Instagram, Linkedin, Twitter, Youtube} from "@/assets/icons/icons.tsx";
 
 export const StudentCount = ({ count, showIcon }: { count?: string | number; showIcon: boolean }) => {

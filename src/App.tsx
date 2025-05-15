@@ -20,6 +20,7 @@ import MinimalLayout from "@/layouts/minimal"
 import SignIn from "./pages/forms/sign-in.tsx"
 import SignUp from "./pages/forms/sign-up.tsx"
 import ComingSoon from "./pages/coming-soon.tsx"
+import CourseListing from "@/pages/CourseListing.tsx";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { path: '/career/:id', element: <CareerDetail />, name: 'Career Detail' },
       { path: '/shopping-cart', element: <ShoppingCart />, name: 'Shopping Cart' },
       { path: '/faq', element: <FAQ />, name: 'FAQ' },
+      { path: '/courses', element: <CourseListing />, name: 'CourseListing' },
     ],
   },
   {

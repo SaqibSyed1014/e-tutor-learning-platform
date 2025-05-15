@@ -1,6 +1,5 @@
 
-import { trustedCompanies } from "@/@fake-db/collections/collections.tsx";
-import { ArrowRight, Users, Globe, Award, Check } from "lucide-react";
+import { trustedCompanies } from "@/@fake-db/collections/index.tsx";
 
 const TrustedCompanies = ({ title, showStats, BGColor }) => {
   return (

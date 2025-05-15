@@ -1,11 +1,11 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {Breadcrumbs} from "@/components/Breadcrumbs.tsx";
 import {Rating} from "@/components/tiny/tiny-collection.tsx";
 import {XCircle, ArrowRight} from "@/assets/icons/common-icons.tsx";
-import coursesData, {Course} from "@/@fake-db/collections";
+import {coursesData} from "@/@fake-db/courses/index.tsx";
+import {Course} from "@/@fake-db/courses/type.ts";
 
 interface CartItem {
     id: number;

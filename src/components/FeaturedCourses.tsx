@@ -1,5 +1,5 @@
 
-import { featuredCourses } from "@/@fake-db/collections/index.ts";
+import { featuredCourses } from "@/@fake-db/courses/index.tsx";
 import { Link } from "react-router-dom";
 import RecentCourses from "@/components/RecentCourses.tsx";
 import {CourseCard} from "@/components/CourseCard.tsx";

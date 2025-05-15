@@ -15,7 +15,7 @@ import {
   Package
 } from "@/assets/icons/icons.tsx";
 import { ArrowRight } from "@/assets/icons/common-icons.tsx";
-import { topCourses } from "@/@fake-db/collections/index.ts";
+import { topCourses } from "@/@fake-db/courses/index.tsx";
 
 
 type CategoryCardProps = {
