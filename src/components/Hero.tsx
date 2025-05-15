@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -13,9 +13,11 @@ const Hero = () => {
             Our mission is to help people to find the best course
             online and learn with expert anytime, anywhere.
           </p>
-          <Button variant="default">
-            Create Account
-          </Button>
+          <Link to="/sign-up">
+            <Button variant="default">
+              Create Account
+            </Button>
+          </Link>
         </div>
       </div>
 

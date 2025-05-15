@@ -5,6 +5,7 @@ import { recentlyAddedCourses } from "@/@fake-db/courses/index.tsx";
 import { Button } from "@/components/ui/button";
 import {CourseCard} from "@/components/CourseCard.tsx";
 import {ArrowRight} from "@/assets/icons/common-icons.tsx";
+import {Link} from "react-router-dom";
 
 const RecentCourses = () => {
   return (
@@ -23,9 +24,11 @@ const RecentCourses = () => {
               ))}
           </div>
 
-          <Button to="/courses" variant="outline" className="mx-auto">
-            Browse All Course <ArrowRight classes="scale-150 ml-1" />
-          </Button>
+            <Link to="/courses" className="mx-auto">
+                <Button variant="outline">
+                    Browse All Course <ArrowRight classes="scale-150 ml-1" />
+                </Button>
+            </Link>
         </div>
 
       </div>

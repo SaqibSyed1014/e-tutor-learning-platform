@@ -26,7 +26,7 @@ const Courses = ({ preSelectedFilters }: { preSelectedFilters?: FilterState }) =
         setSortOption,
     } = useCourseFilter();
 
-    if (preSelectedFilters.categories.length)
+    if (preSelectedFilters?.categories?.length)
         filters.categories = preSelectedFilters.categories;
 
     const handleSearch = (text :string) => {

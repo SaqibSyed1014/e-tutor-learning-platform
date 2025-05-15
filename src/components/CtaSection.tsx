@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import statsData from "@/@fake-db/stats";
+import {Link} from "react-router-dom";
 
 const CtaSection = () => {
   return (
@@ -16,9 +17,11 @@ const CtaSection = () => {
               <Button>
                 Join The Family
               </Button>
-              <Button variant="dark">
-                Browse All Courses
-              </Button>
+              <Link to="/courses">
+                <Button variant="dark">
+                  Browse All Courses
+                </Button>
+              </Link>
             </div>
           </div>
 

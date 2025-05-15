@@ -1,26 +1,14 @@
 
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import CourseCategories from "@/components/CourseCategories";
-import BestSellingCourses from "@/components/BestSellingCourses";
-import FeaturedCourses from "@/components/FeaturedCourses";
-import RecentCourses from "@/components/RecentCourses";
-import BecomeInstructor from "@/components/BecomeInstructor";
-import TopInstructors from "@/components/TopInstructors";
-import TrustedCompanies from "@/components/TrustedCompanies";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+
 import {Link, Outlet} from "react-router-dom";
-import {Bell, BrandLogo, Cart, Heart, MagnifyingGlass} from "@/assets/icons/common-icons.tsx";
-import DropdownMenuWrapper from "@/components/DropdownMenuWrapper.tsx";
-import {Input} from "@/components/ui/input.tsx";
+import {BrandLogo} from "@/assets/icons/common-icons.tsx";
 import {Button} from "@/components/ui/button.tsx";
-import { useMatches } from 'react-router-dom';
+import { useMatches, useLocation } from 'react-router-dom';
 import {SocialMediaLinks} from "@/components/tiny/tiny-collection.tsx";
 
 const Index = () => {
     const matches = useMatches();
-    console.log('mat ', matches)
+    const location = useLocation();
     const slot = matches
         .filter(match => match.handle?.slot)[0].handle?.slot;
 
@@ -29,10 +17,17 @@ const Index = () => {
             case 'auth':
                 return (
                     <div className="flex items-center gap-4">
-                        <Link to="/sign-in">Don’t have account?</Link>
-                        <Link to="/sign-up">
-                            <Button variant="outline">Create Account</Button>
-                        </Link>
+                        {location.pathname === '/sign-up' ? 'Already have an account?' : 'Don’t have account?'}
+                        {location.pathname === '/sign-up' ?
+                            <Link to="/sign-in">
+                                <Button variant="outline">Sign In</Button>
+                            </Link>
+                            :
+                            <Link to="/sign-up">
+                                <Button variant="outline">Create Account</Button>
+                            </Link>
+                        }
+
                     </div>
                 );
             case 'comingSoon':
